@@ -127,9 +127,10 @@ function Home(){
             </div>
 
             <div className='fourth'>
-                <h3>Core Modules</h3>
+                <hr/>
+                <h3 style = {{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Core Modules</h3>
                 <h1>Everything Your Facility Needs</h1>
-                <h3>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
+                <h3 style = {{color: "gray"}}>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
 
             <div className="second-row-cards"> 
                 <div className="second-card">
@@ -195,7 +196,7 @@ function Home(){
 
                 <div className = "second-card-exc">
                     <h2>Machine Integration</h2>
-                    <h3>Connect lab analyzers and medical devices directly to <br/> CareCentral for automated result capture.</h3>
+                    <h3 style={{color: "black"}}>Connect lab analyzers and medical devices directly to <br/> CareCentral for automated result capture.</h3>
                     <h4>Ready for Integration</h4>
                 </div>
                 
@@ -240,7 +241,8 @@ function Home(){
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Platform Features</h3>
                 <h1>Engineered for Healthcare Excellence</h1>
                 <h3>Every feature built with clinical workflow, compliance, and usability in mind.</h3>
-
+                
+                <div className = "third-grids">
                 <div className='third-white-grid'>
                     <div className='third-white-cards'><h3>Electronic Medical Records</h3></div>
                     <div className='third-white-cards'><h3>Patient Timeline</h3></div>
@@ -271,7 +273,7 @@ function Home(){
                     <div className='third-white-cards'><h3>Future AI Ready</h3></div>
                     <div className='third-white-cards'><h3>Data Encryption</h3></div>
                 </div>
-
+            </div>
             </div>
 
             <div className="second-gray">
@@ -312,37 +314,45 @@ function Home(){
                         <div className = "price-white">
                             <h4 style={{paddingLeft:"15px"}}>Monthly Subscription</h4>
                             <h2 style = {{fontWeight: "bold", fontSize: "24"}}>SaaS Plan</h2>
-                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custome</span> <span>ETB/month</span>
+                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custome</span> <span style =  {{color: "gray"}}>ETB/month</span>
                             <h3>ideal for clinics and growing facilities</h3>
-                            <h2>Patient Management</h2>
-                            <h2>Appointment Scheduling</h2>
-                            <h2>OPD Consultations</h2>
-                            <h2>Laboratory Module</h2>
-                            <h2>ICU Module</h2>
-                            <h2>Cloud Hosting Included</h2>
-                            <h2>Email & Telegram Support</h2>
-                            <h2>Regular Updates</h2>
+                            <h2>✓ Patient Management</h2>
+                            <h2>✓ Appointment Scheduling</h2>
+                            <h2>✓ OPD Consultations</h2>
+                            <h2>✓ Laboratory Module</h2>
+                            <h2>✓ ICU Module</h2>
+                            <h2>✓ Cloud Hosting Included</h2>
+                            <h2>✓ Email & Telegram Support</h2>
+                            <h2>✓ Regular Updates</h2>
 
                             <button>Request Demo</button>
                         </div>
                         <div className = "price-blue">
                             <h4 style={{paddingLeft:"8px"}}>One-Time Implementation</h4>
-                            <h2 style = {{fontWeight: "bold", fontSize: "24"}}>One-time plan</h2>
+                            <span style = {{fontWeight: "bold", fontSize: "15px", fontColor: "white"}}>One-time plan</span><br/>
                             <span style =  {{fontWeight: "bold", fontSize: "30px", color: "white"}}>Custome</span> <span>ETB</span>
                             <h3>Full implementation for hospitals and networks.</h3>
-                            <h2>Full Installation & Configuration</h2>
-                            <h2>Staff Training & Go-Live Support</h2>
-                            <h2>All Core Modules</h2>
-                            <h2>On-Premise or Cloud Setup</h2>
-                            <h2>Custom Configuration</h2>
-                            <h2>3 Months Free Support</h2>
-                            <h2>Data Migration Assistance</h2>
-                            <h2>Dedicated Implementation Team</h2>
+                            <h5>✓ Full Installation & Configuration</h5>
+                            <h5>✓ Staff Training & Go-Live Support</h5>
+                            <h5>✓ All Core Modules</h5>
+                            <h5>✓ On-Premise or Cloud Setup</h5>
+                            <h5>✓ Custom Configuration</h5>
+                            <h5>✓ 3 Months Free Support</h5>
+                            <h5>✓ Data Migration Assistance</h5>
+                            <h5>✓ Dedicated Implementation Team</h5>
 
                             <button>Contact Sales</button>
 
                         </div>
                     </div>
+                </div>
+
+                <div className='advantages'>
+                <hr />
+                <h3 style={{color: "rgb(29, 86, 126)"}}>Why Choose Us</h3>
+                <h1>The CareCentral Advantage</h1>
+                <h3>We are not just software — we are your long-term healthcare technology partner.</h3>
+
                 </div>
 
             
