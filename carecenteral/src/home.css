@@ -15,10 +15,7 @@ h1{
     font-size: 36px;
 }
 
-a{
-    font-size: 13px;
-    color: rgb(0, 162, 255);
-}
+
 
 .Navigation-bar {
   display: flex; 
@@ -28,11 +25,31 @@ a{
   
 }
 
+.Navigation-bar span{
+    color: rgb(0, 115, 255);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Navigation-bar a{
+    font-size: 14px
+}
+
+.Navigation-bar button{
+    background-color: rgb(0, 115, 255);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+
 .mid-nav, .left-nav, .right-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    padding-right: 40px;
 }
 
 .hero{
@@ -112,6 +129,10 @@ a{
     padding-right: 100px;
 }
 
+.second h3{
+    color: rgb(93, 93, 93);
+}
+
 .second div {
   display: grid;
   place-items: center;
@@ -122,8 +143,20 @@ a{
     padding-top: 80px;
     padding-bottom: 40px;
     text-align: center;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(248, 248, 248);
 }
+
+.gray hr{
+    width: 30px;
+    color: rgb(48, 105, 171);
+    border: 2px solid rgb(86, 86, 255);
+    border-radius: 50px;
+}
+
+.gray h3{
+    color: rgb(137, 137, 137);
+}
+
 
 .cards-column{
     display: grid;
@@ -163,12 +196,16 @@ a{
     border-radius: 16px;
 }
 
+.second-card h3{
+ color: rgb(59, 59, 59);
+}
+
 .second-card-exc{
     text-align: center;
     background-color: rgb(229, 249, 255);
 }
 
-.second-card-exc h4{
+.second-card-exc h4, .prices h4{
     font-size: 12px;
     color: rgb(45, 107, 177);
     background-color: rgb(209, 236, 253);
@@ -181,4 +218,157 @@ a{
     border-radius: 16px;
     border: 1px solid rgb(104, 104, 255);
 
+}
+
+.second-blue{
+    text-align: center;
+    background-color: rgb(45, 107, 177);
+    padding-top: 50px;
+    margin-top: 50px;
+    padding-bottom: 65px;
+}
+
+.second-blue hr{
+    width: 25px;
+    color: rgb(48, 105, 171);
+    border: 2px solid rgb(109, 166, 246);
+    border-radius: 50px;
+    margin-bottom: -10px;
+}
+
+.second-blue h1, h3{
+    color: white;
+}
+
+.glass-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.glass{
+    background-color: rgb(79, 115, 183);
+    padding: 0px 15px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+
+.third-white, .fifth-white{
+    text-align: center;
+    
+}
+
+.third-white h3, .second-gray h3, .fifth-white h3{
+    color: gray;
+}
+
+.third-white hr, .second-gray hr, .fifth-white hr{
+    width: 30px;
+    color: rgb(48, 105, 171);
+    border: 2px solid rgb(86, 86, 255);
+    border-radius: 50px;
+    margin-bottom: -8px;
+    margin-top: 80px;
+}
+
+.third-white-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.third-white-cards{
+    background-color: rgb(248, 248, 248);
+    border-radius: 10px;
+}
+
+
+.second-gray{
+    padding-top: 8px;
+    margin-top: 65px;
+    text-align: center;
+    background-color: rgb(248, 248, 248);
+    padding-bottom: 60px;
+    
+}
+
+.second-gray-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.second-gray-cards{
+    border-radius: 20px;
+    background-color: white;
+    box-shadow:2px 4px rgb(230, 230, 230);
+}
+
+.prices{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding-right: 150px;
+    padding-left: 150px;
+    margin-top: 60px;
+    
+}
+
+.price-white{
+    border: 2px, solid rgb(240, 240, 240);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 90px;
+}
+
+.price-white h2{
+    color: rgb(67, 67, 67);
+    font-weight: normal;
+}
+
+.price-white button{
+    padding: 15px;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 16px;
+    border:none;
+    background-color: rgb(45, 107, 177);
+    color: white;
+}
+
+.price-blue{
+    padding: 25px;
+    border-radius: 20px;
+    background-color: rgb(45, 107, 177);
+    text-align: left;
+}
+
+.price-blue h1, span, h2{
+    color: rgb(219, 231, 255);
+    font-weight: normal;
+    margin-top: 20px
+}
+
+.price-blue h3{
+    color: rgb(226, 226, 226);
+}
+
+.price-blue button {
+    background: white;
+    padding: 15px;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 16px;
+    border:none;
+    background-color: white;
+    color: rgb(45, 107, 177);
 }
