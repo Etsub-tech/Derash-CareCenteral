@@ -104,9 +104,9 @@ h1{
 .made-for-eth{
     margin-bottom: 70px;
     color: rgb(45, 237, 255);
-    background-color: rgb(85, 119, 182);
-    border-color: white;
-    border: 1px solid rgb(126, 174, 200);  
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(237, 231, 255);  
     width: 283px;
     padding: 5px;
     padding-left: 20px;
