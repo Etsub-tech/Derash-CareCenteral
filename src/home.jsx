@@ -666,8 +666,8 @@ function Home(){
                 <div className="ques-grid-card">Do you provide support?</div>
                 </div>
                 </div>
-
                 <div className="final">
+                <div >
                 <hr style={{ color: "rgb(156, 212, 253)" }} />
                 <h3 style={{ color: "rgb(156, 212, 253)" }}>GET STARTED TODAY</h3>
                 <div className='title'><h1 
@@ -679,11 +679,11 @@ function Home(){
                 <h3 className="text" style={{ color: "rgb(224, 240, 255)" }}>
                     Schedule a personalized demo and see how CareCentral can transform patient care, streamline operations, and bring your facility into the digital era.
                 </h3>
-                <div className="contact-line"></div>
-                        
+                 <div className="text">       
                     <span>📞 +251 955935455</span>
                     <span>✉ beltechsolns@gmail.com</span>
                     <span>➤ @belTechSolns</span>
+                </div>
                 </div>
 
 <div className="stats-row">
@@ -745,7 +745,7 @@ function Home(){
 
     <button>Submit Demo Request → </button>
 </div>
-             
+        </div>     
 
 
                 <div className="footer">
