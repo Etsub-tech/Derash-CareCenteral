@@ -20,6 +20,18 @@ h1{
     font-size: 36px;
 }
 
+.hamburger{
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.mobile-menu{
+    display: none;
+}
 
 
 .Navigation-bar {
@@ -1021,6 +1033,9 @@ h1{
 /* MOBILE RESPONSIVE */
 
 @media (max-width: 900px) {
+    .left-nav{
+        margin-left: -6px;
+    }
         h1{
         font-size: 26px !important;
         line-height: 1.35 !important;
@@ -1044,17 +1059,42 @@ h1{
         gap: 15px;
     }
 
-    .mid-nav{
+.mid-nav{
         display: none;
     }
 
     .right-nav{
-        gap: 10px;
-        padding-right: 0px;
+        display: none;
     }
 
-    .right-nav a{
-        display: none;
+    .hamburger{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(44, 59, 96);
+        padding: 20px;
+        gap: 18px;
+        border-radius: 0px 0px 12px 12px;
+    }
+
+    .mobile-menu a{
+        color: white;
+        font-size: 15px;
+    }
+
+    .mobile-menu button{
+        background-color: rgb(0, 115, 255);
+        padding: 12px 20px;
+        border-radius: 10px;
+        color: white;
+        border: none;
+        width: 100%;
     }
 
     /* Hero */

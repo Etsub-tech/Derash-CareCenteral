@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Price from "./price.jsx";
 import Question from "./question.jsx";
 import Contact from "./contact.jsx";
@@ -10,13 +11,13 @@ function Home(){
         const section = document.getElementById("demos");
         section.scrollIntoView({ behavior: "smooth" });
         };
+        const [menuOpen, setMenuOpen] = useState(false);
     return (
         <>
             <div className = "Navigation-bar">
                 <div className = "left-nav">
                     <div className = "navLogo"><img src={logoOnly} alt="Logo Only" /></div>
                     <span>CareCentral</span>
-
                 </div>
                 <div className = "mid-nav">
                     <a>Features</a>
@@ -29,6 +30,26 @@ function Home(){
                     <a>Contact Sales</a>
                     <button onClick={scrollToDemo}>Request Demo →</button>
                 </div>
+
+                <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? (
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    ) : (
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    )}
+                </button>
+
+                {menuOpen && (
+                    <div className="mobile-menu">
+                        <a>Features</a>
+                        <a>Modules</a>
+                        <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
+                        <a>About</a>
+                        <a href="#questions" onClick={() => setMenuOpen(false)}>FAQ</a>
+                        <a>Contact Sales</a>
+                        <button onClick={() => { setMenuOpen(false); scrollToDemo(); }}>Request Demo →</button>
+                    </div>
+                )}
             </div>
 
             <div className = "hero">
