@@ -4,6 +4,11 @@ h3{
     font-size: 14px;
 }
 
+.the-3{
+  display: flex;
+  gap: 20px;  
+}
+
 h2{
     color: black;
     font-size: 14px;
@@ -630,7 +635,7 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     font-size: 9px;
-    color: gray;
+    color: rgb(46, 46, 46);
     padding-right: 8px;
 }
 
@@ -653,7 +658,7 @@ h1{
 .x-axis-single{
     text-align: center;
     font-size: 11px;
-    color: gray;
+    color: rgb(67, 67, 67);
     margin-top: 8px;
 }
 
@@ -676,7 +681,7 @@ h1{
     display: flex;
     justify-content: space-between;
     font-size: 9px;
-    color: gray;
+    color: rgb(58, 58, 58);
     margin-top: 8px;
 }
 
@@ -956,4 +961,241 @@ h1{
 .icon-circle-blue svg{
     width: 20px;
     height: 20px;
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    /* Navigation */
+    .Navigation-bar{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .mid-nav{
+        display: none;
+    }
+
+    .right-nav{
+        gap: 10px;
+        padding-right: 0px;
+    }
+
+    .right-nav a{
+        display: none;
+    }
+
+    /* Hero */
+    .hero{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .hero a{
+        font-size: 32px !important;
+    }
+
+    .hero h1{
+        font-size: 32px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .made-for-eth{
+        width: auto;
+        font-size: 12px;
+    }
+
+    .hero h3{
+        font-size: 14px;
+    }
+
+    .two-buttons{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .two-buttons button{
+        width: 100%;
+    }
+
+    .the-3{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Dashboard inside hero box */
+    .dashboard-tabs, .dashboard-tabs-second{
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .tab{
+        flex-shrink: 0;
+    }
+
+    .time-select{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .stat-cards{
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .chart-row{
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* second grid (Healthcare ERP etc) */
+    .second{
+        flex-direction: column;
+        gap: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .white{
+        padding: 20px;
+    }
+
+    /* gray cards / advantages cards */
+    .cards-column{
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card{
+        height: auto;
+    }
+
+    /* module cards */
+    .second-row-cards{
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .second-card, .second-card-exc{
+        padding: 30px;
+    }
+
+    /* speciality glass pills */
+    .glass-cards{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* platform features */
+    .third-white-grid{
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* integrations */
+    .second-gray-grid{
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* pricing */
+    .prices{
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 40px;
+    }
+
+    .price-white, .price-blue{
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* FAQ */
+    .ques-grid{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    /* final section */
+    .text{
+        margin-left: 20px;
+    }
+
+    .contact-line{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stats-row{
+        grid-template-columns: 1fr;
+        margin: 30px 20px 0px 20px;
+    }
+
+    .demo-form{
+        margin: 30px 20px 40px 20px;
+        padding: 25px;
+    }
+
+    .form-row{
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-right: 0px;
+    }
+
+    /* footer */
+    .footer{
+        padding: 30px 20px;
+    }
+
+    .footer-nav{
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-grid{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero a, .hero h1{
+        font-size: 26px !important;
+    }
+
+    .stat-cards{
+        grid-template-columns: 1fr;
+    }
+
+    .third-white-grid{
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .dashboard-body{
+        padding: 0px 15px 20px 15px;
+    }
+
+    .stat-card h1{
+        font-size: 18px;
+    }
+
+    .glass{
+        font-size: 12px;
+    }
 }

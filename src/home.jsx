@@ -32,17 +32,17 @@ function Home(){
                     <br/>platform.</h3>
                 
                 <div className = "two-buttons">
-                <button classNAme = "elivated">Request a Demo </button>
+                <button style={{backgroundColor:"rgb(37, 84, 137)"}}>Request a Demo </button>
                 <button> Explore Features</button>
                 </div>
 
-                <div> 
-                    <span>HIPAA Aligned</span>
-                    <span>Multi-Branch</span>
-                    <span>Cloud & On-Premise</span>
+                <div className='the-3'> 
+                    <span>✓ HIPAA Aligned</span>
+                    <span>✓ Multi-Branch</span>
+                    <span>✓ Cloud & On-Premise</span>
                 </div>
 
-                <div className="box"><div className="box">
+                <div className="box">
     <div className="dashboard">
         <div className="dashboard-top">
             <span className="back-arrow">‹</span>
@@ -175,8 +175,8 @@ function Home(){
             </div>
         </div>
     </div>
-</div></div>
-            </div>
+</div>
+</div>
 
             <div className='white'>
             <div className = "second-grid">
@@ -192,9 +192,9 @@ function Home(){
                 <h3>Aechitecture</h3>
             </div>
             <div>
-                <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="13" x2="16" y2="13"/></svg></div>
-                <h2>Multi-Branch</h2>
-                <h3>Ready</h3>
+                <div className="icon-circle" style={{marginRight:"20px"}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="13" x2="16" y2="13"/></svg></div>
+                <h2 style={{marginRight:"20px"}}>Multi-Branch</h2>
+                <h3 style={{marginRight:"20px"}}>Ready</h3>
             </div>
             </div>
             <div className='second'>
@@ -221,7 +221,7 @@ function Home(){
             <div className = "gray">
                 <hr/>
                 <h3 style={{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Why CareCentral</h3>
-                <h1>Built for Modern Healthcare</h1>
+                <div className="title"><h1>Built for Modern Healthcare</h1></div>
                 <h3>A platform designed from the ground up for clinics, hospitals, and multi-branch <br/> healthcare networks in Ethiopia.</h3>
 
                 <div className='cards-column'>
@@ -277,7 +277,7 @@ function Home(){
             <div className='fourth'>
                 <hr/>
                 <h3 style = {{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Core Modules</h3>
-                <h1>Everything Your Facility Needs</h1>
+                <div className='title'><h1 >Everything Your Facility Needs</h1></div>
                 <h3 style = {{color: "gray"}}>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
 
             <div className="second-row-cards"> 
@@ -361,7 +361,7 @@ function Home(){
             <div className = "second-blue">
                 <hr />
                 <h3 style={{color: "rgb(117, 223, 250)"}}>SPECIALITY MODULES</h3>
-                <h1>Expand to Any Specialty</h1>
+                <div className='title'><h1>Expand to Any Specialty</h1></div>
                 <h3>Add specialty modules as your facility's clinical scope grows.</h3>
 
                 <div className="glass-cards">
@@ -392,7 +392,7 @@ function Home(){
             <div className="third-white">
                  <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Platform Features</h3>
-                <h1>Engineered for Healthcare Excellence</h1>
+                <div className='title'><h1>Engineered for Healthcare Excellence</h1></div>
                 <h3>Every feature built with clinical workflow, compliance, and usability in mind.</h3>
                 
                 <div className = "third-grids">
@@ -491,7 +491,7 @@ function Home(){
             <div className="second-gray">
                  <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Integrations</h3>
-                <h1>Connected to Everything You Need</h1>
+                <div className='title'><h1>Connected to Everything You Need</h1></div>
                 <h3>Seamlessly integrated with business operations, medical devices, and future health standards.</h3>
 
             <div className='second-gray-grid'>
@@ -555,7 +555,7 @@ function Home(){
                 <div className='fifth-white'>
                     <hr />
                     <h3 style={{color: "rgb(29, 86, 126)"}}>PRICING</h3>
-                    <h1>Simple, Transparent Pricing</h1>
+                    <div className='title'><h1>Simple, Transparent Pricing</h1></div>
                     <h3>Choose the plan that fits your facility. No hidden fees, no surprises.</h3>
 
                     <div className = "prices">
@@ -598,7 +598,7 @@ function Home(){
                 <div className='advantages'>
                 <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Why Choose Us</h3>
-                <h1>The CareCentral Advantage</h1>
+                <div className='title'><h1>The CareCentral Advantage</h1></div>
                 <h3 style={{color: "gray"}}>We are not just software — we are your long-term healthcare technology partner.</h3>
 
 
@@ -654,7 +654,7 @@ function Home(){
                 <div className='ques'>
                 <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>FAQ</h3>
-                <h1>Frequently Asked Questions</h1>
+                <div className='title'><h1>Frequently Asked Questions</h1></div>
                 <h3 style={{color: "gray"}}>Everything you need to know about CareCentral.</h3>
                 <div className="ques-grid">
                 <div className="ques-grid-card"> what is CareCenteral</div>
@@ -668,15 +668,23 @@ function Home(){
                 </div>
 
                 <div className="final">
-                <hr style={{color: "rgb(156, 212, 253)"}}/>
-                <h3 style={{color: "rgb(156, 212, 253)"}}>GET STARTED TODAY</h3>
-                <h1 className="text">Ready to Modernize Your Healthcare Facility?</h1>
-                <h3 className="text" style={{color: "rgb(224, 240, 255)"}}>Schedule a personalized demo and see how CareCentral can transform patient care, streamline operations, and bring your facility into the digital era.</h3>
-                <div className="contact-line">
-    <span>📞 +251 955935455</span>
-    <span>✉ beltechsolns@gmail.com</span>
-    <span>➤ @belTechSolns</span>
-</div>
+                <hr style={{ color: "rgb(156, 212, 253)" }} />
+                <h3 style={{ color: "rgb(156, 212, 253)" }}>GET STARTED TODAY</h3>
+                <div className='title'><h1 
+                    className="text" 
+                    style={{ color: "rgb(224, 240, 255)", textAlign: "left", marginLeft: "40px" }}
+                >
+                    Ready to Modernize Your Healthcare Facility?
+                </h1></div>
+                <h3 className="text" style={{ color: "rgb(224, 240, 255)" }}>
+                    Schedule a personalized demo and see how CareCentral can transform patient care, streamline operations, and bring your facility into the digital era.
+                </h3>
+                <div className="contact-line"></div>
+                        
+                    <span>📞 +251 955935455</span>
+                    <span>✉ beltechsolns@gmail.com</span>
+                    <span>➤ @belTechSolns</span>
+                </div>
 
 <div className="stats-row">
     <div className="stat-box">
@@ -737,7 +745,7 @@ function Home(){
 
     <button>Submit Demo Request → </button>
 </div>
-                </div>
+             
 
 
                 <div className="footer">
