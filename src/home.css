@@ -968,7 +968,20 @@ h1{
 /* MOBILE RESPONSIVE */
 
 @media (max-width: 900px) {
-    
+        h1{
+        font-size: 26px !important;
+        line-height: 1.35 !important;
+        overflow-wrap: break-word;
+    }
+
+    .title{
+        margin-bottom: 15px;
+    }
+
+    .gray hr, .fourth hr, .second-blue hr, .third-white hr,
+    .second-gray hr, .fifth-white hr, .ques hr, .final hr, .advantages hr{
+        margin-bottom: 10px;
+    }
 
     /* Navigation */
     .Navigation-bar{
@@ -1174,6 +1187,10 @@ h1{
 
 @media (max-width: 480px) {
 
+    h1{
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
     .hero a, .hero h1{
         font-size: 26px !important;
     }
