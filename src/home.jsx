@@ -1,7 +1,15 @@
-import './home.css'
+import Price from "./price.jsx";
+import Question from "./question.jsx";
+import Contact from "./contact.jsx";
+import Demo from "./demo.jsx";
+import './home.css';
 import logo from './assets/logo.png';
 import logoOnly from './assets/logo-only.png';
 function Home(){
+        const scrollToDemo = () => {
+        const section = document.getElementById("demos");
+        section.scrollIntoView({ behavior: "smooth" });
+        };
     return (
         <>
             <div className = "Navigation-bar">
@@ -13,13 +21,13 @@ function Home(){
                 <div className = "mid-nav">
                     <a>Features</a>
                     <a>Modules</a>
-                    <a>Pricing</a>
+                    <a href="#pricing">Pricing</a>
                     <a>About</a>
-                    <a>FAQ</a>
+                    <a href="#questions">FAQ</a>
                 </div>
                 <div className = "right-nav">
                     <a>Contact Sales</a>
-                    <button>Request Demo → </button>
+                    <button onClick={scrollToDemo}>Request Demo →</button>
                 </div>
             </div>
 
@@ -32,7 +40,7 @@ function Home(){
                     <br/>platform.</h3>
                 
                 <div className = "two-buttons">
-                <button className = "request-button">Request a Demo </button>
+                <button className = "request-button" onClick={scrollToDemo}>Request a Demo </button>
                 <button className = "explore-button"> Explore Features</button>
                 </div>
 
@@ -551,49 +559,10 @@ function Home(){
                 </div>
             </div>
                 </div>
-
-                <div className='fifth-white'>
-                    <hr />
-                    <h3 style={{color: "rgb(29, 86, 126)"}}>PRICING</h3>
-                    <div className='title'><h1>Simple, Transparent Pricing</h1></div>
-                    <h3>Choose the plan that fits your facility. No hidden fees, no surprises.</h3>
-
-                    <div className = "prices">
-                        <div className = "price-white">
-                            <h4 style={{paddingLeft:"15px"}}>Monthly Subscription</h4>
-                            <h2 style = {{fontWeight: "bold", fontSize: "24"}}>SaaS Plan</h2>
-                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custome</span> <span style =  {{color: "gray"}}>ETB/month</span>
-                            <h3>ideal for clinics and growing facilities</h3>
-                            <h2>✓ Patient Management</h2>
-                            <h2>✓ Appointment Scheduling</h2>
-                            <h2>✓ OPD Consultations</h2>
-                            <h2>✓ Laboratory Module</h2>
-                            <h2>✓ ICU Module</h2>
-                            <h2>✓ Cloud Hosting Included</h2>
-                            <h2>✓ Email & Telegram Support</h2>
-                            <h2>✓ Regular Updates</h2>
-
-                            <button>Request Demo</button>
-                        </div>
-                        <div className = "price-blue">
-                            <h4 style={{paddingLeft:"8px"}}>One-Time Implementation</h4>
-                            <span style = {{fontWeight: "bold", fontSize: "15px", fontColor: "white"}}>One-time plan</span><br/>
-                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "white"}}>Custome</span> <span>ETB</span>
-                            <h3>Full implementation for hospitals and networks.</h3>
-                            <h5>✓ Full Installation & Configuration</h5>
-                            <h5>✓ Staff Training & Go-Live Support</h5>
-                            <h5>✓ All Core Modules</h5>
-                            <h5>✓ On-Premise or Cloud Setup</h5>
-                            <h5>✓ Custom Configuration</h5>
-                            <h5>✓ 3 Months Free Support</h5>
-                            <h5>✓ Data Migration Assistance</h5>
-                            <h5>✓ Dedicated Implementation Team</h5>
-
-                            <button>Contact Sales</button>
-
-                        </div>
-                    </div>
+                <div id="pricing">
+                    <Price />
                 </div>
+            
 
                 <div className='advantages'>
                 <hr />
@@ -651,110 +620,18 @@ function Home(){
             </div>
                 </div>
 
-                <div className='ques'>
-                <hr />
-                <h3 style={{color: "rgb(29, 86, 126)"}}>FAQ</h3>
-                <div className='title'><h1>Frequently Asked Questions</h1></div>
-                <h3 style={{color: "gray"}}>Everything you need to know about CareCentral.</h3>
-                <div className="ques-grid">
-                <div className="ques-grid-card"> what is CareCenteral</div>
-                <div className="ques-grid-card">Can it work for multiple branches?</div>
-                <div className="ques-grid-card">Can we add modules later?</div>
-                <div className="ques-grid-card">Is cloud deployment available?</div>
-                <div className="ques-grid-card">Can it integrate with existing systems?</div>
-                <div className="ques-grid-card">Do you provide training?</div>
-                <div className="ques-grid-card">Do you provide support?</div>
-                </div>
-                </div>
-                <div className="final">
-                <div >
-                <hr style={{ color: "rgb(156, 212, 253)" }} />
-                <h3 style={{ color: "rgb(156, 212, 253)" }}>GET STARTED TODAY</h3>
-                <div className='title'><h1 
-                    className="text" 
-                    style={{ color: "rgb(224, 240, 255)", textAlign: "left", marginLeft: "40px" }}
-                >
-                    Ready to Modernize Your Healthcare Facility?
-                </h1></div>
-                <h3 className="text" style={{ color: "rgb(224, 240, 255)" }}>
-                    Schedule a personalized demo and see how CareCentral can transform patient care, streamline operations, and bring your facility into the digital era.
-                </h3>
-                 <div className="text">       
-                    <span>📞 +251 955935455</span>
-                    <span>✉ beltechsolns@gmail.com</span>
-                    <span>➤ @belTechSolns</span>
-                </div>
-                </div>
-
-<div className="stats-row">
-    <div className="stat-box">
-        <h1>48h</h1>
-        <h3>Average setup time</h3>
-    </div>
-    <div className="stat-box">
-        <h1>100%</h1>
-        <h3>Local support team</h3>
-    </div>
-    <div className="stat-box">
-        <h1>5 months</h1>
-        <h3>Free post-launch support</h3>
-    </div>
-</div>
-
-<div className="demo-form">
-    <h2>Request a Demo</h2>
-    <h3>Fill in the form and our team will reach out within 24 hours.</h3>
-
-    <div className="form-row">
-        <div className="form-group">
-            <h4>Hospital / Clinic Name *</h4>
-            <input type="text" placeholder="Addis Healthcare Center" />
-        </div>
-        <div className="form-group">
-            <h4>Contact Person *</h4>
-            <input type="text" placeholder="Dr. Sara Haile" />
-        </div>
-    </div>
-
-    <div className="form-row">
-        <div className="form-group">
-            <h4>Email Address *</h4>
-            <input type="text" placeholder="contact@clinic.et" />
-        </div>
-        <div className="form-group">
-            <h4>Phone Number *</h4>
-            <input type="text" placeholder="+251 91 234 5678" />
-        </div>
-    </div>
-
-    <div className="form-row">
-        <div className="form-group">
-            <h4>Facility Type</h4>
-            <input type="text" />
-        </div>
-        <div className="form-group">
-            <h4>Number of Branches</h4>
-            <input type="text" placeholder="e.g. 1, 3, 10+" />
-        </div>
-    </div>
-
-    <div className="form-group-full">
-        <h4>Message</h4>
-        <textarea placeholder="Tell us about your facility and what you need..."></textarea>
-    </div>
-
-    <button>Submit Demo Request → </button>
-</div>
-        </div>     
+                <div id= "questions"><Question/></div>
+                <div id= "demos"><Demo /></div>
+                        <div id="contactUs"><Contact /></div>    
 
 
-                <div className="footer">
+    <div className="footer">
     <div className="footer-nav">
         <a>Features</a>
         <a>Modules</a>
-        <a>Pricing</a>
+        <a href="#pricing">Pricing</a>
         <a>About</a>
-        <a>FAQ</a>
+        <a href="#questions">FAQ</a>
     </div>
 
     <div className="footer-grid">
