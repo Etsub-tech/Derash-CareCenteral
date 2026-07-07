@@ -32,8 +32,8 @@ function Home(){
                     <br/>platform.</h3>
                 
                 <div className = "two-buttons">
-                <button style={{backgroundColor:"rgb(37, 84, 137)"}}>Request a Demo </button>
-                <button> Explore Features</button>
+                <button className = "request-button">Request a Demo </button>
+                <button className = "explore-button"> Explore Features</button>
                 </div>
 
                 <div className='the-3'> 

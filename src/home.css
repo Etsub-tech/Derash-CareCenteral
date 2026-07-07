@@ -61,8 +61,13 @@ h1{
     padding-top: 100px;
     padding-left: 40px;
     padding-bottom: 80px;
-    background-color: rgb(45, 107, 177);
     color: rgb(255, 255, 255);
+    background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #3b82f6 35%,
+        #4f46e5 70%,
+        #6d28d9 100%)
 }
 
 .hero h3{
@@ -71,6 +76,17 @@ h1{
 }
 .hero a{
     color: white;
+}
+
+.request-button{
+            background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #517fc9 35%,
+        #5e94e6 70%,
+        #24a1e9 100%);
+        box-shadow: 2px 3px 10px rgb(50, 50, 50);
+
 }
 
 .made-for-eth{
@@ -95,11 +111,14 @@ h1{
 }
 
 .two-buttons button{
-    padding:20px;
+    padding:20px 30px;
     color: white;
-    background-color: rgb(85, 119, 182);
-    border-radius: 30px;
+    border-radius: 20px;
     border: None;
+}
+
+.explore-button{
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .elivated{
@@ -247,10 +266,16 @@ h1{
 
 .second-blue{
     text-align: center;
-    background-color: rgb(45, 107, 177);
     padding-top: 50px;
     margin-top: 50px;
     padding-bottom: 65px;
+        background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #3b82f6 35%,
+        #4f46e5 70%,
+        #6d28d9 100%)
+
 }
 
 .second-blue hr, .fifth-white hr, .ques hr, .final hr{
@@ -274,7 +299,7 @@ h1{
 }
 
 .glass{
-    background-color: rgb(79, 115, 183);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0px 15px;
     border-radius: 20px;
     margin-top: 8px;
@@ -385,14 +410,26 @@ h1{
     width: 100%;
     border-radius: 16px;
     border:none;
-    background-color: rgb(45, 107, 177);
+            background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #3b82f6 35%,
+        #4f46e5 70%,
+        #6d28d9 100%);
+
     color: white;
 }
 
 .price-blue{
     padding: 25px;
     border-radius: 20px;
-    background-color: rgb(45, 107, 177);
+            background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #3b82f6 35%,
+        #4f46e5 70%,
+        #6d28d9 100%);
+
     text-align: left;
     height: 550px
 }
@@ -454,9 +491,15 @@ h1{
 }
 
 .final{
-    background-color:rgb(45, 107, 177);
     padding-top: 20px;
     padding-bottom: 20px;
+        background: linear-gradient(
+        135deg,
+        #2d6bb1 0%,
+        #3b82f6 35%,
+        #4f46e5 70%,
+        #6d28d9 100%)
+
 }
 .text{
     text-align: left;
@@ -706,7 +749,7 @@ h1{
 }
 
 .stat-box{
-    background-color: rgb(85, 119, 182);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     padding: 20px;
 }
