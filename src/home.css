@@ -1166,7 +1166,6 @@ h1{
     .form-row{
         grid-template-columns: 1fr;
         gap: 15px;
-        margin-right: 0px;
     }
 
     /* footer */
