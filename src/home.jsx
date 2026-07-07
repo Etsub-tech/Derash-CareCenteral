@@ -1,10 +1,12 @@
 import './home.css'
+import logo from './assets/logo.png';
+import logoOnly from './assets/logo-only.png';
 function Home(){
     return (
         <>
             <div className = "Navigation-bar">
                 <div className = "left-nav">
-                    <img/>
+                    <div className = "navLogo"><img src={logoOnly} alt="Logo Only" /></div>
                     <span>CareCentral</span>
 
                 </div>
@@ -749,7 +751,7 @@ function Home(){
 
     <div className="footer-grid">
         <div className="footer-brand">
-            <div className="footer-logo"><img/></div>
+            <div className="footer-logo"><img src={logo} alt="Logo" /></div>
             <h3>A modern Healthcare ERP by Beltech Solutions — empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
             <div className="footer-socials">
                 <span>in</span>
