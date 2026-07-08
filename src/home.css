@@ -512,12 +512,12 @@ color: white;
 .final{
     padding-top: 20px;
     padding-bottom: 20px;
-        background: linear-gradient(
+    background: linear-gradient(
         135deg,
-        #2d6bb1 0%,
-        #3b82f6 35%,
-        #4f46e5 70%,
-        #6d28d9 100%)
+        #397dca 0%,
+        #2e7ed8 0%,
+        #5468e9 70%,
+        #19538e 100%)
 
 }
 .text{
@@ -835,10 +835,10 @@ color: white;
     border: none;
     background: linear-gradient(
         135deg,
-        #2d6bb1 0%,
-        #3b82f6 35%,
-        #4f46e5 70%,
-        #6d28d9 100%);
+        #397dca 0%,
+        #2e7ed8 0%,
+        #5468e9 70%,
+        #19538e 100%);
     color: white;
     font-weight: bold;
 }
@@ -1045,14 +1045,16 @@ color: white;
         overflow-wrap: break-word;
     }
 
-    .title{
-        margin-bottom: 15px;
+    .title h1{
+        letter-spacing: -0.5px;
     }
 
     .gray hr, .fourth hr, .second-blue hr, .third-white hr,
     .second-gray hr, .fifth-white hr, .ques hr, .final hr, .advantages hr{
         margin-bottom: 10px;
+
     }
+  
 
     /* Navigation */
     .Navigation-bar{
@@ -1223,6 +1225,11 @@ color: white;
         padding-left: 20px;
         padding-right: 20px;
     }
+
+    .second-gray-cards{
+        margin-bottom: -5px;
+    }
+    
 
     /* pricing */
     .prices{
