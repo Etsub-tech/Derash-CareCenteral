@@ -61,8 +61,8 @@ function Home(){
                     <br/>platform.</h3>
                 
                 <div className = "two-buttons">
-                <button className = "request-button" onClick={scrollToDemo}>Request a Demo </button>
-                <button className = "explore-button"> Explore Features</button>
+                <button className = "request-button" onClick={scrollToDemo}> Request a Demo → </button>
+                <button className = "explore-button"> ▶ Explore Features</button>
                 </div>
 
                 <div className='the-3'> 
