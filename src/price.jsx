@@ -15,7 +15,7 @@ function Price(){
                         <div className = "price-white">
                             <h4 style={{paddingLeft:"15px"}}>Monthly Subscription</h4>
                             <h2 style = {{fontWeight: "bold", fontSize: "24"}}>SaaS Plan</h2>
-                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custome</span> <span style =  {{color: "gray"}}>ETB/month</span>
+                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custom</span> <span style =  {{color: "gray"}}>ETB/month</span>
                             <h3>ideal for clinics and growing facilities</h3>
                             <h2>✓ Patient Management</h2>
                             <h2>✓ Appointment Scheduling</h2>
@@ -31,7 +31,7 @@ function Price(){
                         <div className = "price-blue">
                             <h4 style={{paddingLeft:"8px"}}>One-Time Implementation</h4>
                             <span style = {{fontWeight: "bold", fontSize: "15px", fontColor: "white"}}>One-time plan</span><br/>
-                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "white"}}>Custome</span> <span>ETB</span>
+                            <span style =  {{fontWeight: "bold", fontSize: "30px", color: "white"}}>Custom</span> <span>ETB</span>
                             <h3>Full implementation for hospitals and networks.</h3>
                             <h5>✓ Full Installation & Configuration</h5>
                             <h5>✓ Staff Training & Go-Live Support</h5>

@@ -27,8 +27,7 @@ function Home(){
                     <a href="#questions">FAQ</a>
                 </div>
                 <div className = "right-nav">
-                    <a>Contact Sales</a>
-                    <button onClick={scrollToDemo}>Request Demo →</button>
+                    <button onClick={scrollToDemo}>Contact Us →</button>
                 </div>
 
                 <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
