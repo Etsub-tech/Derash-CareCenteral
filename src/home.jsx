@@ -12,12 +12,26 @@ function Home(){
         section.scrollIntoView({ behavior: "smooth" });
         };
         const [menuOpen, setMenuOpen] = useState(false);
+        const [activeTab, setActiveTab] = useState("Overview");
+        const tabs = [
+            "Overview",
+            "Laboratory",
+            "Pharmacy",
+            "Radiology",
+            "Physiotherapy",
+            "Gynecology",
+            "ENT",
+            "Dental",
+            "Ophthalmology",
+            "Fleet",
+            "Fees",
+            ];
     return (
         <>
             <div className = "Navigation-bar">
                 <div className = "left-nav">
                     <div className = "navLogo"><img src={logoOnly} alt="Logo Only" /></div>
-                    <span>CareCentral</span>
+                    <span style={{color:"#3898d0"}}>CareCentral</span>
                 </div>
                 <div className = "mid-nav">
                     <a>Features</a>
@@ -30,7 +44,7 @@ function Home(){
                     <button onClick={scrollToDemo}>Contact Us →</button>
                 </div>
 
-                <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} style={{backgroundColor:"white"}}>
                     {menuOpen ? (
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     ) : (
@@ -85,35 +99,31 @@ function Home(){
             <h2>Health Management Dashboard</h2>
 
             <div className="dashboard-tabs">
-                <button className="tab active">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="12" width="4" height="8"/><rect x="10" y="8" width="4" height="12"/><rect x="17" y="4" width="4" height="16"/></svg>
-                    Overview
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg>
-                    Laboratory
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="8" width="18" height="8" rx="4"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
-                    Pharmacy
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
-                    Radiology
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    Physiotherapy
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></svg>
-                    Gynecology
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 9a3 3 0 0 1-6 0"/></svg>
-                    ENT
-                </button>
-                <select className="time-select"><option>All Time</option></select>
+                {tabs.slice(0, 7).map((tab) => (
+                    <button
+                        key={tab}
+                        className={`tab ${activeTab === tab ? "active" : ""}`}
+                        onClick={() => setActiveTab(tab)}
+                    >
+                        {tab}
+                    </button>
+                ))}
+
+                <select className="time-select">
+                    <option>All Time</option>
+                </select>
+            </div>
+
+            <div className="dashboard-tabs-second">
+                {tabs.slice(7).map((tab) => (
+                    <button
+                        key={tab}
+                        className={`tab ${activeTab === tab ? "active" : ""}`}
+                        onClick={() => setActiveTab(tab)}
+                    >
+                        {tab}
+                    </button>
+                ))}
             </div>
 
             <div className="dashboard-tabs-second">
