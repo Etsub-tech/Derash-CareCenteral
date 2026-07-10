@@ -4,6 +4,7 @@ import Home from "./home.jsx";
 import Price from "./price.jsx";
 import Question from "./question.jsx";
 import Contact from "./contact.jsx";
+import MoreModules from "./more-modules.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/question" element={<Question />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/demo" element={<Demo />} />
+        <Route path="/more-modules" element={<MoreModules />}/>
 
       </Routes>
     </Router>

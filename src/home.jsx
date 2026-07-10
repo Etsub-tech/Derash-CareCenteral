@@ -3,9 +3,12 @@ import Price from "./price.jsx";
 import Question from "./question.jsx";
 import Contact from "./contact.jsx";
 import Demo from "./demo.jsx";
+//import MoreModules from "./more-modules.jsx";
 import './home.css';
 import logo from './assets/logo.png';
 import logoOnly from './assets/logo-only.png';
+import { Link } from "react-router-dom";
+
 function Home(){
         const scrollToDemo = () => {
         const section = document.getElementById("demos");
@@ -35,7 +38,7 @@ function Home(){
                 </div>
                 <div className = "mid-nav">
                     <a>Features</a>
-                    <a>Modules</a>
+                    <Link to="/more-modules">Modules</Link>
                     <a href="#pricing">Pricing</a>
                     <a>About</a>
                     <a href="#questions">FAQ</a>
@@ -55,7 +58,7 @@ function Home(){
                 {menuOpen && (
                     <div className="mobile-menu">
                         <a>Features</a>
-                        <a>Modules</a>
+                        <Link to="/more-modules">Modules</Link>
                         <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
                         <a>About</a>
                         <a href="#questions" onClick={() => setMenuOpen(false)}>FAQ</a>
@@ -85,136 +88,124 @@ function Home(){
                 </div>
 
                 <div className="box">
-    <div className="dashboard">
-        <div className="dashboard-top">
-            <span className="back-arrow">‹</span>
-            <div className="win-dots">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-            </div>
-        </div>
-
-        <div className="dashboard-body">
-            <h2>Health Management Dashboard</h2>
-
-            <div className="dashboard-tabs">
-                {tabs.slice(0, 7).map((tab) => (
-                    <button
-                        key={tab}
-                        className={`tab ${activeTab === tab ? "active" : ""}`}
-                        onClick={() => setActiveTab(tab)}
-                    >
-                        {tab}
-                    </button>
-                ))}
-
-                <select className="time-select">
-                    <option>All Time</option>
-                </select>
-            </div>
-
-            <div className="dashboard-tabs-second">
-                {tabs.slice(7).map((tab) => (
-                    <button
-                        key={tab}
-                        className={`tab ${activeTab === tab ? "active" : ""}`}
-                        onClick={() => setActiveTab(tab)}
-                    >
-                        {tab}
-                    </button>
-                ))}
-            </div>
-
-            <div className="dashboard-tabs-second">
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3c-2 3-2 4-4 4a3 3 0 0 0-3 3c0 5 3 9 5 11 1-2 1-3 2-3s1 1 2 3c2-2 5-6 5-11a3 3 0 0 0-3-3c-2 0-2-1-4-4z"/></svg>
-                    Dental
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
-                    Ophthalmology
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="1" y="7" width="14" height="9"/><path d="M15 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg>
-                    Fleet
-                </button>
-                <button className="tab">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1-1.3-1.8-3-1.8s-3 .8-3 2 1.3 1.6 3 1.8 3 .8 3 2-1.3 2-3 2-3-.8-3-1.8"/></svg>
-                    Fees
-                </button>
-            </div>
-
-            <div className="stat-cards">
-                <div className="stat-card blue-edge">
-                    <div>
-                        <h4>TOTAL PATIENTS</h4>
-                        <h1>3</h1>
-                    </div>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div className="stat-card yellow-edge">
-                    <div>
-                        <h4>ADMITTED TODAY</h4>
-                        <h1>1</h1>
-                    </div>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 13V7a2 2 0 0 1 2-2h6v8"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-                </div>
-                <div className="stat-card red-edge">
-                    <div>
-                        <h4>APPOINTMENTS TODAY</h4>
-                        <h1>0</h1>
-                    </div>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                </div>
-                <div className="stat-card green-edge">
-                    <div>
-                        <h4>TOTAL EARNINGS</h4>
-                        <h1>Birr 0.00</h1>
-                    </div>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1-1.3-1.8-3-1.8s-3 .8-3 2 1.3 1.6 3 1.8 3 .8 3 2-1.3 2-3 2-3-.8-3-1.8"/></svg>
-                </div>
-            </div>
-
-            <div className="chart-row">
-                <div className="chart-box">
-                    <h3>Patient Gender Distribution</h3>
-                    <div className="pie"></div>
-                    <div className="legend"><span className="legend-dot purple"></span>Male</div>
-                </div>
-
-                <div className="chart-box">
-                    <h3>Admissions by Department</h3>
-                    <div className="bar-chart">
-                        <div className="y-axis">
-                            <span>1.0</span><span>0.8</span><span>0.6</span><span>0.4</span><span>0.2</span>
-                        </div>
-                        <div className="bar-area">
-                            <div className="bar"></div>
+                <div className="dashboard">
+                    <div className="dashboard-top">
+                        <span className="back-arrow">‹</span>
+                        <div className="win-dots">
+                            <span className="dot red"></span>
+                            <span className="dot yellow"></span>
+                            <span className="dot green"></span>
                         </div>
                     </div>
-                    <div className="x-axis-single">Eye</div>
-                </div>
 
-                <div className="chart-box">
-                    <h3>Appointments (Last 6 Months)</h3>
-                    <div className="line-chart">
-                        <div className="y-axis">
-                            <span>1.0</span><span>0.8</span><span>0.6</span><span>0.4</span><span>0.2</span>
+                    <div className="dashboard-body">
+                        <h2>Health Management Dashboard</h2>
+
+                        <div className="dashboard-tabs">
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab}
+                                    className={`tab ${activeTab === tab ? "active" : ""}`}
+                                    onClick={() => setActiveTab(tab)}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+
+                            <select className="time-select">
+                                <option>All Time</option>
+                            </select>
                         </div>
-                        <div className="line-area">
-                            <div className="flat-line"></div>
+
+                        <div className="dashboard-tabs-second">
+                            <button className="tab">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3c-2 3-2 4-4 4a3 3 0 0 0-3 3c0 5 3 9 5 11 1-2 1-3 2-3s1 1 2 3c2-2 5-6 5-11a3 3 0 0 0-3-3c-2 0-2-1-4-4z"/></svg>
+                                Dental
+                            </button>
+                            <button className="tab">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                Ophthalmology
+                            </button>
+                            <button className="tab">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="1" y="7" width="14" height="9"/><path d="M15 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg>
+                                Fleet
+                            </button>
+                            <button className="tab">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1-1.3-1.8-3-1.8s-3 .8-3 2 1.3 1.6 3 1.8 3 .8 3 2-1.3 2-3 2-3-.8-3-1.8"/></svg>
+                                Fees
+                            </button>
                         </div>
-                    </div>
-                    <div className="x-axis-months">
-                        <span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+
+                        <div className="stat-cards">
+                            <div className="stat-card blue-edge">
+                                <div>
+                                    <h4>TOTAL PATIENTS</h4>
+                                    <h1>3</h1>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div className="stat-card yellow-edge">
+                                <div>
+                                    <h4>ADMITTED TODAY</h4>
+                                    <h1>1</h1>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 13V7a2 2 0 0 1 2-2h6v8"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                            </div>
+                            <div className="stat-card red-edge">
+                                <div>
+                                    <h4>APPOINTMENTS TODAY</h4>
+                                    <h1>0</h1>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            </div>
+                            <div className="stat-card green-edge">
+                                <div>
+                                    <h4>TOTAL EARNINGS</h4>
+                                    <h1>Birr 0.00</h1>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1-1.3-1.8-3-1.8s-3 .8-3 2 1.3 1.6 3 1.8 3 .8 3 2-1.3 2-3 2-3-.8-3-1.8"/></svg>
+                            </div>
+                        </div>
+
+                        <div className="chart-row">
+                            <div className="chart-box">
+                                <h3>Patient Gender Distribution</h3>
+                                <div className="pie"></div>
+                                <div className="legend"><span className="legend-dot purple"></span>Male</div>
+                            </div>
+
+                            <div className="chart-box">
+                                <h3>Admissions by Department</h3>
+                                <div className="bar-chart">
+                                    <div className="y-axis">
+                                        <span>1.0</span><span>0.8</span><span>0.6</span><span>0.4</span><span>0.2</span>
+                                    </div>
+                                    <div className="bar-area">
+                                        <div className="bar"></div>
+                                    </div>
+                                </div>
+                                <div className="x-axis-single">Eye</div>
+                            </div>
+
+                            <div className="chart-box">
+                                <h3>Appointments (Last 6 Months)</h3>
+                                <div className="line-chart">
+                                    <div className="y-axis">
+                                        <span>1.0</span><span>0.8</span><span>0.6</span><span>0.4</span><span>0.2</span>
+                                    </div>
+                                    <div className="line-area">
+                                        <div className="flat-line"></div>
+                                    </div>
+                                </div>
+                                <div className="x-axis-months">
+                                    <span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</div>
+            </div>
 
             <div className='white'>
             <div className = "second-grid">
@@ -320,7 +311,7 @@ function Home(){
 
             <div className="second-row-cards"> 
                 <div className="second-card">
-                     <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <h2>Patient Management</h2>
                     <h3>✓ Patient Registration</h3>
                     <h3>✓ Electronic Medical Records</h3>
@@ -392,7 +383,7 @@ function Home(){
                 </div>
                 
             </div>  
-                <button className = "more-modules"> <a> See More Modules →</a></button>
+                <Link className = "more-modules" to="/more-modules"> See More Modules →</Link>
 
             </div>
 

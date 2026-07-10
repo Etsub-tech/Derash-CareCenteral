@@ -1,0 +1,347 @@
+body{
+    background-color: rgb(236, 236, 236);
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+}
+.module-nav{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  width: 100%;
+  box-shadow: 1px 3px 10px rgb(174, 169, 255);
+  padding: 0px 20px;
+}
+
+.back-home{
+    color: #2e7ed8;
+    cursor: pointer;
+    transition: color 0.2s, opacity 0.2s;
+}
+
+.back-home:hover{
+    color: #1c4e82;
+    opacity: 0.8;
+}
+
+.module-hero{
+    padding-top: 140px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 80px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(
+        135deg,
+        #3997ca 0%,
+        #2e7ed8 0%,
+        #2b7098 70%,
+        #2c1c68 100%)
+}
+
+.module-hero h1{
+    color: rgb(228, 228, 228);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.module-hero h2{
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+}
+
+.module-hero hr{
+    width: 25px;
+    color: rgb(48, 105, 171);
+    border: 2px solid rgb(109, 166, 246);
+    border-radius: 50px;
+    margin-bottom: -10px;
+}
+
+.num{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.num h3{
+    margin-top:-15px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding-left: 40px;
+    gap: 15px;
+    height: 60px;
+    box-shadow: 1px 3px 2px rgb(216, 216, 216);
+}
+
+.filter-btn{
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: #333;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover{
+    background-color: rgb(224, 236, 253);
+}
+
+.filter-btn.active{
+    background-color: #2e7ed8;
+    color: white;
+}
+
+.filter-btn.active:hover{
+    background-color: #2670bd;
+}
+
+.module-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    border-radius: 15px;
+    padding: 50px;
+    gap: 50px;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    width: 48px;
+    height: 48px;
+    background-color: rgb(224, 236, 253);
+    border-radius: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(45, 107, 177);
+}
+
+.icon svg{
+    width: 22px;
+    height: 22px;
+}
+
+.available h1{
+    color: #3898d0;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    background-color: rgb(231, 253, 255);
+    padding: 1px 7px;
+    border-color:#3898d0;
+    border-width: 1px;
+}
+.available{
+    border-color: blue;
+}
+
+.name{
+    color: #3898d0;
+    font-size: 15px;
+    letter-spacing: 0px;
+    background-color: rgba(111, 196, 235, 0.2);
+    padding: 2px 6px;
+    border-radius: 7px;
+    border-color:#3898d0;
+    display: inline-block;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+.text-grids{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 40px;
+}
+
+.module-cards{
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.module-cards h2{
+    font-weight: normal;
+    color: rgb(111, 111, 111);
+}
+
+.module-cards h5{
+    color:rgb(35, 97, 136);
+    font-weight: 500;
+}
+
+.bottom{
+    padding-top: 30px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 80px;
+    background: linear-gradient(
+        135deg,
+        #3997ca 0%,
+        #2e7ed8 0%,
+        #2b7098 70%,
+        #2c1c68 100%)
+}
+
+.buttom h1, h2{
+    color: white;
+}
+
+.bottom-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;  
+    padding-top:17px;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.bottom-buttons a{
+    padding:16px 30px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.bottom-buttons a:hover{
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.button1{
+    background-color:rgba(255, 255, 255, 0.2) ;
+    color: white;
+}
+
+.button2{
+    background-color: white;
+    color: #2e7ed8;
+}
+
+.bottom-nav{
+    background-color: #0a1533;
+    color: rgb(59, 59, 59);
+    font-weight: normal;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.bottom-nav span{
+    color: gray;
+    font-size: 13px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 900px) {
+    *, *::before, *::after{
+        box-sizing: border-box;
+    }
+
+    .module-nav{
+        padding: 0px 15px;
+    }
+
+    .module-hero{
+        padding-top: 110px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+    }
+
+    .module-hero h1{
+        font-size: 26px;
+    }
+
+    .module-hero h2{
+        font-size: 14px;
+    }
+
+    .num{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .module-grid{
+        grid-template-columns: 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .text-grids{
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .bottom{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+    }
+
+    .bottom h1{
+        font-size: 24px;
+    }
+
+    .bottom-buttons{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .bottom-buttons a{
+        width: 100%;
+        text-align: center;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .module-hero h1{
+        font-size: 22px;
+    }
+
+    .available h1, .name{
+        font-size: 12px;
+    }
+
+    .module-cards h4{
+        font-size: 15px;
+    }
+}
