@@ -22,7 +22,7 @@ function Home(){
             </div>
 
             <div className = "hero">
-                <div className = "made-for-eth"><span>Enterprise ERP· Made for Ethiopia</span></div>
+                <div className = "made-for-eth"><span>Enterprise EMR+ ERP· Made for Ethiopia</span></div>
                 <a style={{fontSize: "60px", fontWeight: "bold"}}>Healthcare </a> <a style={{fontSize: "60px", fontWeight: "bold", color: "#acd1f7"}}>Management Made</a><h1 style={{fontSize: "60px", fontWeight: "bold", color: "white", marginBottom: "60px"}}>Simple.</h1>
                 <h3>CareCentral is a modern Healthcare ERP built on Odoo that
                     <br/>helps clinics and hospitals streamline patient care,
