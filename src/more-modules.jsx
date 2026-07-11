@@ -13,7 +13,7 @@ function MoreModules(){
             </div>
             <div className="module-hero">
                 <hr/>
-                <h3>ALL MODULES</h3>
+                <h3 style={{color: "white"}}>ALL MODULES</h3>
                 <h1>Every Modle. One Platform.</h1>
                 <h2>CareCentral is fully modular — start with what you need and expand at your own pace. All modules share the same patient database, eliminating duplicate data entry.</h2>
                 <div className="num"><div><h1>18+</h1><h3>Modules Available</h3></div><div><h1>100%</h1><h3>Modular Architecture</h3></div></div>
