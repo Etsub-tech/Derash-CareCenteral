@@ -201,15 +201,14 @@ h1{
 
 .white{
     padding: 40px;
+    background-color: white;
 }
 
 .second-grid{
     display: flex;
     flex-direction: column;
-    
-
-    
 }
+
 .second{
     display: flex;
     justify-content: space-between;
@@ -221,6 +220,11 @@ h1{
 
 .second h3{
     color: rgb(93, 93, 93);
+}
+
+.second h2{
+    color: rgb(92, 92, 92);
+    font-weight: 500;
 }
 
 .second div {
@@ -296,6 +300,7 @@ h1{
     padding-top: 80px;
     padding-bottom: 40px;
     text-align: center;
+    background-color: white;
 }
 
 .fourth hr{
@@ -334,7 +339,7 @@ h1{
  color: rgb(59, 59, 59);
 }
 
-.seconf-card h2{
+.second-card h2{
     color: rgb(75, 75, 75);
 }
 
@@ -429,6 +434,7 @@ h1{
 
 .third-white, .fifth-white, .final{
     text-align: center;
+    background-color: white;
     
 }
 
@@ -510,6 +516,7 @@ h1{
     padding-right: 150px;
     padding-left: 150px;
     margin-top: 60px;
+    
     
 }
 
