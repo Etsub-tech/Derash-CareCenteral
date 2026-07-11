@@ -73,7 +73,7 @@ function Home(){
             </div>
 
             <div className = "hero">
-                <div className = "made-for-eth"><span>Enterprise ERP· Made for Ethiopia</span></div>
+                <div className = "made-for-eth"><span>EEnterprise EMR+ ERP· Made for Ethiopia</span></div>
                 <a style={{fontSize: "60px", fontWeight: "bold"}}>Healthcare </a> <a style={{fontSize: "60px", fontWeight: "bold", color: "#acd1f7"}}>Management Made</a><h1 style={{fontSize: "60px", fontWeight: "bold", color: "white", marginBottom: "60px"}}>Simple.</h1>
                 <h3>CareCentral is a modern Healthcare ERP built on Odoo that
                     <br/>helps clinics and hospitals streamline patient care,
@@ -317,7 +317,7 @@ function Home(){
             <div className="second-row-cards"> 
                 <div className="second-card">
                     <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <h2>Patient Management</h2>
+                    <h2 style={{color: "gray", fontWeight: "400"}}>Patient Management</h2>
                     <h3>✓ Patient Registration</h3>
                     <h3>✓ Electronic Medical Records</h3>
                     <h3>✓ Medical History</h3>
@@ -331,7 +331,7 @@ function Home(){
 
                 <div className = "second-card">
                     <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                    <h2>Appointment Scheduling</h2>
+                    <h2 style={{color: "gray", fontWeight: "400"}}>Appointment Scheduling</h2>
                     <h3>✓ Doctor Calendar</h3>
                     <h3>✓ Queue Management</h3>
                     <h3>✓ Walk-ins</h3>
@@ -347,7 +347,7 @@ function Home(){
             <div className="second-row-cards"> 
                 <div className="second-card">
                 <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12h4l2-8 4 16 2-8h8"/></svg></div>
-                    <h2>OPD Consultations</h2>
+                    <h2 style={{color: "gray", fontWeight: "400"}}>OPD Consultations</h2>
                     <h3>✓ SOAP Notes</h3>
                     <h3>✓ Vitals</h3>
                     <h3>✓ Diagnoses</h3>
@@ -361,7 +361,7 @@ function Home(){
                 <div className = "second-card">
                     <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg></div>
 
-                    <h2>Laboratory</h2>
+                    <h2 style={{color: "gray", fontWeight: "400"}}>Laboratory</h2>
                     <h3>✓ Lab Requests</h3>
                     <h3>✓ Test Catalog</h3>
                     <h3>✓ Sample Tracking</h3>
@@ -378,7 +378,8 @@ function Home(){
 
             <div className="second-row-cards"> 
                 <div className="second-card">
-                <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>                    <h2>ICU</h2>
+                <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>                    
+                    <h2 style={{color: "gray", fontWeight: "400"}}>ICU</h2>
                     <h3>✓ Admissions</h3>
                     <h3>✓ Bed Management</h3>
                     <h3>✓ Continuous Monitoring</h3>
