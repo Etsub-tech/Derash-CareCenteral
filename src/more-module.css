@@ -48,7 +48,7 @@ a{
     font-weight: bold;
 }
 
-.module-hero h2{
+.module-hero h2 .module-hero h3{
     font-size: 16px;
     color: white;
     font-weight: normal;
@@ -70,6 +70,7 @@ a{
 
 .num h3{
     margin-top:-15px;
+    color: white;
 }
 
 .buttons{
