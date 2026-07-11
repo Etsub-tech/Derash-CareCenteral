@@ -1,5 +1,5 @@
-Link{
-    color: red;
+body {
+  background-color: white !important;
 }
 h3{
     color: rgb(51, 50, 50);
@@ -227,6 +227,20 @@ h1{
   display: grid;
   place-items: center;
   text-align: center; 
+}
+
+.learn-more-link{
+    color: rgb(86, 92, 163);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.learn-more-link:hover{
+    color: rgb(45, 107, 177);
+    margin-left: 4px;
 }
 
 .gray{

@@ -22,6 +22,7 @@ a{
     color: #2e7ed8;
     cursor: pointer;
     transition: color 0.2s, opacity 0.2s;
+    padding-right: 50px;
 }
 
 .back-home:hover{
@@ -82,6 +83,12 @@ a{
     gap: 15px;
     height: 60px;
     box-shadow: 1px 3px 2px rgb(216, 216, 216);
+    z-index: 1000;
+    position: relative;
+}
+
+.my-cards{
+    background-color: gray;
 }
 
 .filter-btn{
@@ -112,12 +119,10 @@ a{
 .module-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 40px;
     border-radius: 15px;
     padding: 50px;
     gap: 50px;
+    background-color: rgb(242, 242, 242);
 }
 
 .icons{
@@ -174,11 +179,19 @@ a{
     padding-bottom: 40px;
 }
 
+
 .module-cards{
     background-color: white;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.module-cards:hover{
+    box-shadow: 4px 4px 10px rgb(150, 150, 150);
 }
 
 .module-cards h2{
@@ -207,6 +220,7 @@ a{
 
 .buttom h1, h2{
     color: white;
+    font-weight: normal;
 }
 
 .bottom-buttons{
@@ -344,4 +358,9 @@ a{
     .module-cards h4{
         font-size: 15px;
     }
+}
+
+.learn-more:hover{
+    cursor: pointer;
+    color: rgb(57, 149, 228);
 }

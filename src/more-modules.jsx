@@ -49,7 +49,7 @@ function MoreModules(){
                             <h2>✓ Insurance Management</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -75,7 +75,7 @@ function MoreModules(){
                             <h2>✓ Multi-Doctor View</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -101,7 +101,7 @@ function MoreModules(){
                             <h2>✓ Referral Management</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -127,7 +127,7 @@ function MoreModules(){
                             <h2>✓ Machine Integration</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -153,7 +153,7 @@ function MoreModules(){
                             <h2>✓ Critical Care Dashboard</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -179,7 +179,7 @@ function MoreModules(){
                             <h2>✓ Billing Integration</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -205,7 +205,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -231,7 +231,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -257,7 +257,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -283,7 +283,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -309,7 +309,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -335,7 +335,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -361,7 +361,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -387,7 +387,7 @@ function MoreModules(){
                             <h2>✓ Billing</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -413,7 +413,7 @@ function MoreModules(){
                             <h2>✓ Reports</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -439,7 +439,7 @@ function MoreModules(){
                             <h2>✓ Odoo Accounting</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -465,7 +465,7 @@ function MoreModules(){
                             <h2>✓ Performance Reviews</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -491,7 +491,7 @@ function MoreModules(){
                             <h2>✓ Reports</h2>
                         </div>
                     </div>
-                    <h5>Learn More</h5>
+                    <h5 className = "learn-more">Learn More</h5>
 
                 </div>
                 )}
@@ -504,7 +504,7 @@ function MoreModules(){
                 
                 <div className="bottom-buttons">
                 <NavLink to="/" className="button1">← Back to Home</NavLink>
-                <NavLink to="/#demos" className="button2">Contact Sales →</NavLink>
+                <NavLink to="/#demos" className="button2" style={{color:"#2e7ed8", fontWeight:"500"}}>Contact Sales →</NavLink>
                 </div>
                 
             </div>

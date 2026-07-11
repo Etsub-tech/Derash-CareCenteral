@@ -10,6 +10,10 @@ import logoOnly from './assets/logo-only.png';
 import { Link } from "react-router-dom";
 
 function Home(){
+        const scrollToFeatures = () => {
+        const section = document.getElementById("features");
+        section.scrollIntoView({ behavior: "smooth" });
+};
         const scrollToDemo = () => {
         const section = document.getElementById("demos");
         section.scrollIntoView({ behavior: "smooth" });
@@ -37,10 +41,10 @@ function Home(){
                     <span style={{color:"#3898d0"}}>CareCentral</span>
                 </div>
                 <div className = "mid-nav">
-                    <a>Features</a>
+                    <a href="#features">Features</a>
                     <Link to="/more-modules">Modules</Link>
                     <a href="#pricing">Pricing</a>
-                    <a>About</a>
+                    <a href="#about">About</a>
                     <a href="#questions">FAQ</a>
                 </div>
                 <div className = "right-nav">
@@ -57,12 +61,12 @@ function Home(){
 
                 {menuOpen && (
                     <div className="mobile-menu">
-                        <a>Features</a>
+                        <a href = "#features" onClick={() => setMenuOpen(false)}>Features</a>
                         <Link to="/more-modules">Modules</Link>
                         <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
-                        <a>About</a>
+                        <a href="#about">About</a>
                         <a href="#questions" onClick={() => setMenuOpen(false)}>FAQ</a>
-                        <a>Contact Sales</a>
+                        <a href="demo">Contact Sales</a>
                         <button onClick={() => { setMenuOpen(false); scrollToDemo(); }}>Request Demo →</button>
                     </div>
                 )}
@@ -78,8 +82,9 @@ function Home(){
                 
                 <div className = "two-buttons">
                 <button className = "request-button" onClick={scrollToDemo}> Request a Demo → </button>
-                <button className = "explore-button"> ▶ Explore Features</button>
-                </div>
+                <button className="explore-button" onClick={scrollToFeatures}>
+                    ▶ Explore Features
+                </button>                </div>
 
                 <div className='the-3'> 
                     <span>✓ HIPAA Aligned</span>
@@ -247,7 +252,7 @@ function Home(){
             </div>
             </div>
 
-            <div className = "gray">
+            <div className = "gray" id="about">
                 <hr/>
                 <h3 style={{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Why CareCentral</h3>
                 <div className="title"><h1>Built for Modern Healthcare</h1></div>
@@ -319,7 +324,9 @@ function Home(){
                     <h3>✓ Patient Timeline</h3>
                     <h3>✓ Documents</h3>
                     <h3>✓ Insurance</h3>
-                    <a>Learn More → </a>
+                    <Link className="learn-more-link" to="/more-modules">
+    Learn More →
+</Link>
                 </div>
 
                 <div className = "second-card">
@@ -330,7 +337,9 @@ function Home(){
                     <h3>✓ Walk-ins</h3>
                     <h3>✓ Reminders</h3>
                     <h3>✓ Reception Dashboard</h3>
-                    <a>Learn More → </a>
+                    <Link className="learn-more-link" to="/more-modules">
+    Learn More →
+</Link>
                 </div>
             </div>
 
@@ -345,7 +354,9 @@ function Home(){
                     <h3>✓ Procedures</h3>
                     <h3>✓ Follow-ups</h3>
                     <h3>✓ Referrals</h3>
-                    <a>Learn More → </a>
+                    <Link className="learn-more-link" to="/more-modules">
+    Learn More →
+</Link>
                 </div>
                 <div className = "second-card">
                     <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg></div>
@@ -357,7 +368,9 @@ function Home(){
                     <h3>✓ Result Management</h3>
                     <h3>✓ Reports</h3>
                     <h3>✓ Machine Integration</h3>
-                    <a>Learn More → </a>
+                    <Link className="learn-more-link" to="/more-modules">
+    Learn More →
+</Link>
                 </div>
                 
             </div>
@@ -372,7 +385,9 @@ function Home(){
                     <h3>✓ Ventilator Management</h3>
                     <h3>✓ Nursing Notes</h3>
                     <h3>✓ Critical Care Dashboard</h3>
-                    <a>Learn More → </a>
+                    <Link className="learn-more-link" to="/more-modules">
+    Learn More →
+</Link>
                 </div>
 
                 <div className = "second-card-exc">
@@ -418,10 +433,10 @@ function Home(){
                 </div>
             </div>
 
-            <div className="third-white">
+            <div className="third-white" id="features">
                  <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Platform Features</h3>
-                <div className='title'><h1>Engineered for Healthcare Excellence</h1></div>
+                <div className='title' ><h1>Engineered for Healthcare Excellence</h1></div>
                 <h3>Every feature built with clinical workflow, compliance, and usability in mind.</h3>
                 
                 <div className = "third-grids">
@@ -648,10 +663,10 @@ function Home(){
 
     <div className="footer">
     <div className="footer-nav">
-        <a>Features</a>
+        <a href="#features">Features</a>
         <a>Modules</a>
         <a href="#pricing">Pricing</a>
-        <a>About</a>
+        <a href="#about">About</a>
         <a href="#questions">FAQ</a>
     </div>
 
