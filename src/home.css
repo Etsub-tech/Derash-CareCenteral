@@ -283,6 +283,11 @@ h1{
     color: gray;
 }
 
+.card h2{
+    color: rgb(81, 81, 81);
+    font-weight: 500;
+}
+
 .card:hover{
     box-shadow: 4px 4px 28px rgba(0,0,0,0.1);
 }
@@ -398,7 +403,7 @@ h1{
     margin-bottom: -10px;
 }
 
-.second-blue h1, h3{
+.second-blue h1, .second-blue h3{
     color: white;
 }
 
@@ -511,7 +516,7 @@ h1{
 .price-white{
     border: 2px, solid rgb(224, 227, 255);
     padding: 25px;
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(245, 245, 245);
     border-radius: 10px;
     text-align: left;
     margin-bottom: 40px;
@@ -550,7 +555,7 @@ h1{
     height: 550px
 }
 
-.price-blue h1, span, h5{
+.price-blue h1, .price-blue span, .price-blue h5{
     color: rgb(199, 219, 253);
     font-weight: normal;
     margin-top: -16px
