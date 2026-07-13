@@ -39,7 +39,7 @@ function Home(){
             <div className = "Navigation-bar">
                 <div className = "left-nav">
                     <div className = "navLogo"><img src={logoOnly} alt="Logo Only" /></div>
-                    <span style={{color:"#3898d0"}}>CareCentral</span>
+                    <span style={{color:"#3898d0", marginBottom: "9%"}}>CareCentral</span>
                 </div>
                 <div className = "mid-nav">
                     <a href="#features">Features</a>
