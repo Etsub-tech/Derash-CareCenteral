@@ -2,519 +2,731 @@ import { useState } from "react";
 import "./more-module.css";
 import { HashLink } from "react-router-hash-link";
 
-function MoreModules(){
-    const [filter, setFilter] = useState("all");
+// ---------------------------------------------------------------------------
+// MODULE DATA — add/edit a module by adding/editing an object here.
+// category must be one of: "clinical" | "speciality" | "administrative"
+// ---------------------------------------------------------------------------
+const modules = [
+  // ---------------- CLINICAL ----------------
+  {
+    id: "patient-management",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Patient Management",
+    description:
+      "Centralised patient records covering registration, medical history, documents, insurance, and a full patient timeline.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    includes: [
+      ["Patient Registration", "Medical History", "Document Management"],
+      ["Electronic Medical Records", "Patient Timeline", "Insurance Management"],
+    ],
+  },
+  {
+    id: "appointment-scheduling",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Appointment Scheduling",
+    description:
+      "Intelligent scheduling with doctor calendars, walk-in queue management, automated reminders, and a reception dashboard.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
+      </svg>
+    ),
+    includes: [
+      ["Doctor Calendar", "Walk-in Support", "Reception Dashboard"],
+      ["Queue Management", "Automated Reminders", "Multi-Doctor View"],
+    ],
+  },
+  {
+    id: "opd-consultations",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "OPD Consultations",
+    description:
+      "Full outpatient consultation workflow with SOAP notes, vitals capture, diagnosis coding, procedure tracking, and referrals.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="18" cy="6" r="2" />
+        <path d="M6 3v6a5 5 0 0 0 10 0V3" />
+        <path d="M11 14v2a5 5 0 0 0 10 0" />
+      </svg>
+    ),
+    includes: [
+      ["SOAP Notes", "Diagnosis Coding", "Follow-up Scheduling"],
+      ["Vitals Recording", "Procedure Tracking", "Referral Management"],
+    ],
+  },
+  {
+    id: "laboratory",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Laboratory",
+    description:
+      "End-to-end lab workflow from request to result — with sample tracking, machine integration, and report generation.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2" />
+        <line x1="9" y1="2" x2="15" y2="2" />
+      </svg>
+    ),
+    includes: [
+      ["Lab Request Management", "Sample Tracking", "Automated Reports"],
+      ["Test Catalog", "Result Management", "Machine Integration"],
+    ],
+  },
+  {
+    id: "icu-management",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "ICU Management",
+    description:
+      "Critical care module with bed management, continuous monitoring, ventilator tracking, and nursing notes.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="10" width="18" height="8" rx="1" />
+        <path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" />
+      </svg>
+    ),
+    includes: [
+      ["Admissions Management", "Continuous Monitoring", "Nursing Notes"],
+      ["Bed Management", "Ventilator Management", "Critical Care Dashboard"],
+    ],
+  },
+  {
+    id: "ipd",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "IPD",
+    description:
+      "Manage inpatient admissions, ward assignments, daily progress notes, and discharge summaries.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M2 12h4l2-8 4 16 2-8h8" />
+      </svg>
+    ),
+    includes: [
+      ["Admission Management", "Daily Rounds Notes", "Discharge Summary"],
+      ["Ward Assignment", "Medication Orders", "Billing Integration"],
+    ],
+  },
+  {
+    id: "infection-control",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Infection Control",
+    description:
+      "Track outbreaks, manage isolation protocols, and stay audit-ready with full surveillance and compliance reporting.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+    includes: [
+      ["Outbreak Tracking", "Isolation Management", "Surveillance Reports"],
+      ["PPE Inventory", "Contact Tracing", "Compliance Audits"],
+    ],
+  },
+  {
+    id: "telemedicine",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Telemedicine",
+    description:
+      "Video consultations, e-prescriptions, and remote patient monitoring — all synced with the same patient record.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M23 7l-7 5 7 5V7z" />
+        <rect x="1" y="5" width="15" height="14" rx="2" />
+      </svg>
+    ),
+    includes: [
+      ["Video Consultations", "E-Prescriptions", "Remote Monitoring"],
+      ["Appointment Booking", "Patient Portal", "Consultation History"],
+    ],
+  },
+  {
+    id: "admission",
+    category: "clinical",
+    categoryLabel: "CLINICAL",
+    title: "Admission",
+    description:
+      "Streamlined patient admission with bed allocation, deposit handling, and insurance verification up front.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M9 2h6a1 1 0 0 1 1 1v1H8V3a1 1 0 0 1 1-1z" />
+        <rect x="5" y="4" width="14" height="18" rx="2" />
+        <line x1="9" y1="10" x2="15" y2="10" />
+        <line x1="9" y1="14" x2="15" y2="14" />
+      </svg>
+    ),
+    includes: [
+      ["Bed Allocation", "Admission Forms", "Deposit Management"],
+      ["Ward Transfer", "Insurance Verification", "Discharge Planning"],
+    ],
+  },
 
-    return(
-        <>
-            <div className= "module-nav">
-                <HashLink to="/" className="back-home">← Back to Home</HashLink>
-                <HashLink smooth to="/#demos" className="back-home">
-                    Contact Sales
-                </HashLink>
+  // ---------------- SPECIALITY ----------------
+  {
+    id: "dental",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Dental",
+    description:
+      "Specialized dental module with tooth charting, treatment planning, and dental imaging integration.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+    includes: [
+      ["Tooth Charting", "Dental Imaging", "Patient Records"],
+      ["Treatment Planning", "Appointment Scheduling", "Billing"],
+    ],
+  },
+  {
+    id: "radiology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Radiology",
+    description:
+      "Radiology request and result management with PACS integration readiness and report generation.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="2" y="4" width="20" height="13" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    ),
+    includes: [
+      ["Radiology Requests", "PACS Integration Ready", "Image Viewing"],
+      ["Result Management", "Report Generation", "Billing"],
+    ],
+  },
+  {
+    id: "pharmacy",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Pharmacy",
+    description:
+      "Dispensing, stock management, drug interactions, and prescription fulfillment in one module.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M21 8l-9-5-9 5 9 5 9-5z" />
+        <path d="M3 8v8l9 5 9-5V8" />
+      </svg>
+    ),
+    includes: [
+      ["Prescription Dispensing", "Drug Interaction Alerts", "Supplier Management"],
+      ["Drug Inventory", "Expiry Tracking", "Billing"],
+    ],
+  },
+  {
+    id: "ophthalmology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Ophthalmology",
+    description:
+      "Eye clinic module with visual acuity recording, refraction, and surgical procedure tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+    includes: [
+      ["Visual Acuity", "Surgical Planning", "Patient Timeline"],
+      ["Refraction Records", "IOL Calculation", "Billing"],
+    ],
+  },
+  {
+    id: "gynecology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Gynecology",
+    description:
+      "Women's health module covering antenatal care, delivery records, and gynaecological consultations.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+      </svg>
+    ),
+    includes: [
+      ["Antenatal Care", "Growth Charts", "Risk Assessment"],
+      ["Delivery Records", "Consultation Notes", "Billing"],
+    ],
+  },
+  {
+    id: "ent",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "ENT",
+    description:
+      "Ear, Nose & Throat module with audiogram support, nasal endoscopy notes, and procedure tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M6 18h8" />
+        <path d="M3 22h18" />
+        <path d="M14 22a7 7 0 1 0 0-14h-1" />
+        <path d="M9 14h2" />
+        <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
+        <path d="M12 6V3a1 1 0 0 0-1-1H9.5" />
+      </svg>
+    ),
+    includes: [
+      ["Audiogram Recording", "Procedure Tracking", "Referrals"],
+      ["Endoscopy Notes", "Patient Records", "Billing"],
+    ],
+  },
+  {
+    id: "emergency",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Emergency",
+    description:
+      "Rapid patient intake for emergency cases with triage scoring, resuscitation notes, and real-time bed status.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+      </svg>
+    ),
+    includes: [
+      ["Triage Scoring", "Resuscitation Notes", "Handover Notes"],
+      ["Rapid Intake", "Bed Status Board", "Billing"],
+    ],
+  },
+  {
+    id: "surgery",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Surgery",
+    description:
+      "Surgical workflow from pre-op assessment through post-op care, including OT scheduling and anaesthesia notes.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <line x1="20" y1="4" x2="8.12" y2="15.88" />
+        <line x1="14.47" y1="14.48" x2="20" y2="20" />
+        <line x1="8.12" y1="8.12" x2="12" y2="12" />
+      </svg>
+    ),
+    includes: [
+      ["Pre-op Assessment", "Anaesthesia Notes", "Post-op Care"],
+      ["OT Scheduling", "Surgical Checklists", "Billing"],
+    ],
+  },
+  {
+    id: "blood-bank",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Blood Bank",
+    description:
+      "Donor management, blood typing, and inventory tracking with cross-matching and expiry alerts built in.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z" />
+      </svg>
+    ),
+    includes: [
+      ["Donor Management", "Blood Typing", "Inventory Tracking"],
+      ["Cross-matching", "Expiry Alerts", "Transfusion Records"],
+    ],
+  },
+  {
+    id: "vaccination",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Vaccination",
+    description:
+      "Immunization scheduling and vaccine inventory management, with certificates and adverse-event reporting.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 21l6-6" />
+        <path d="M9 15l6-6 3 3-6 6z" />
+        <path d="M14 4l3 3" />
+        <path d="M17 1l3 3" />
+      </svg>
+    ),
+    includes: [
+      ["Immunization Schedule", "Vaccine Inventory", "Dose Tracking"],
+      ["Reminder Alerts", "Certificate Generation", "Adverse Event Reporting"],
+    ],
+  },
+  {
+    id: "dialysis",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Dialysis",
+    description:
+      "Dialysis session scheduling, machine allocation, and fluid balance tracking for every visit.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2v20" />
+        <path d="M4 12h16" />
+        <circle cx="12" cy="12" r="9" />
+      </svg>
+    ),
+    includes: [
+      ["Session Scheduling", "Machine Allocation", "Fluid Balance Tracking"],
+      ["Patient Vitals", "Treatment History", "Billing Integration"],
+    ],
+  },
+  {
+    id: "oncology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Oncology",
+    description:
+      "Chemotherapy and radiation planning with tumor staging, treatment protocols, and follow-up tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2c-2 4-2 6 0 8s2 4 0 8" />
+        <circle cx="12" cy="2" r="1" />
+      </svg>
+    ),
+    includes: [
+      ["Chemotherapy Planning", "Radiation Scheduling", "Tumor Staging"],
+      ["Treatment Protocols", "Follow-up Tracking", "Palliative Care Notes"],
+    ],
+  },
+  {
+    id: "pediatrics",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Pediatrics",
+    description:
+      "Growth charts, immunization tracking, and developmental milestones in a dedicated child-care workflow.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="9" cy="10" r="1" />
+        <circle cx="15" cy="10" r="1" />
+        <path d="M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5" />
+      </svg>
+    ),
+    includes: [
+      ["Growth Charts", "Immunization Tracking", "Developmental Milestones"],
+      ["Well-baby Visits", "Parent Portal", "Pediatric Dosing"],
+    ],
+  },
+  {
+    id: "cardiology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Cardiology",
+    description:
+      "ECG management and cath lab scheduling with cardiac risk scoring and device tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+        <polyline points="7 12 10 12 11 9 13 15 14 12 17 12" />
+      </svg>
+    ),
+    includes: [
+      ["ECG Management", "Cath Lab Scheduling", "Cardiac Risk Scoring"],
+      ["Echo Reports", "Device Tracking", "Follow-up Scheduling"],
+    ],
+  },
+  {
+    id: "dermatology",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Dermatology",
+    description:
+      "Skin condition imaging, biopsy tracking, and treatment plans with before/after photo history.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+    ),
+    includes: [
+      ["Skin Condition Imaging", "Biopsy Tracking", "Treatment Plans"],
+      ["Procedure Scheduling", "Patient Photos", "Follow-up Reminders"],
+    ],
+  },
+  {
+    id: "physiotherapy",
+    category: "speciality",
+    categoryLabel: "Specialty",
+    title: "Physiotherapy",
+    description:
+      "Session scheduling and exercise plans with progress tracking across the full course of therapy.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="4" r="2" />
+        <path d="M12 6v6l-4 4" />
+        <path d="M12 12l4 4" />
+        <path d="M8 10l-4 2" />
+        <path d="M16 10l4 2" />
+      </svg>
+    ),
+    includes: [
+      ["Session Scheduling", "Exercise Plans", "Progress Tracking"],
+      ["Assessment Notes", "Equipment Booking", "Billing Integration"],
+    ],
+  },
+
+  // ---------------- ADMINISTRATIVE ----------------
+  {
+    id: "inventory",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "Inventory",
+    description:
+      "Real-time stock management for medical supplies and consumables with reorder alerts and supplier tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="2" width="16" height="20" rx="2" />
+        <line x1="8" y1="8" x2="16" y2="8" />
+        <line x1="8" y1="13" x2="16" y2="13" />
+      </svg>
+    ),
+    includes: [
+      ["Stock Management", "Supplier Management", "Internal Transfers"],
+      ["Reorder Alerts", "Expiry Tracking", "Reports"],
+    ],
+  },
+  {
+    id: "finance-billing",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "Finance & Billing",
+    description:
+      "Full revenue cycle management with patient billing, insurance claims, receipts, and financial reporting.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="2" width="16" height="20" rx="2" />
+        <line x1="8" y1="6" x2="16" y2="6" />
+        <line x1="8" y1="10" x2="10" y2="10" />
+        <line x1="8" y1="14" x2="10" y2="14" />
+        <line x1="8" y1="18" x2="10" y2="18" />
+        <line x1="14" y1="10" x2="16" y2="10" />
+        <line x1="14" y1="14" x2="16" y2="14" />
+        <line x1="14" y1="18" x2="16" y2="18" />
+      </svg>
+    ),
+    includes: [
+      ["Patient Billing", "Payment Receipts", "Tax Compliance"],
+      ["Insurance Claims", "Financial Reports", "Odoo Accounting"],
+    ],
+  },
+  {
+    id: "hr-payroll",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "HR & Payroll",
+    description:
+      "Staff management from onboarding to payroll — contracts, leaves, payslips, and performance tracking.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="9" cy="7" r="4" />
+        <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+        <polyline points="17 11 19 13 23 9" />
+      </svg>
+    ),
+    includes: [
+      ["Employee Onboarding", "Leave Management", "Payslips"],
+      ["Contract Management", "Payroll Processing", "Performance Reviews"],
+    ],
+  },
+  {
+    id: "attendance",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "Attendance",
+    description:
+      "Biometric and manual attendance tracking with shift management and overtime calculation.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 14" />
+      </svg>
+    ),
+    includes: [
+      ["Biometric Integration", "Shift Management", "Leave Integration"],
+      ["Manual Attendance", "Overtime Calculation", "Reports"],
+    ],
+  },
+  {
+    id: "mortuary",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "Mortuary",
+    description:
+      "Body registration and cold storage tracking with release documentation and family notifications.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+      </svg>
+    ),
+    includes: [
+      ["Body Registration", "Storage Management", "Release Documentation"],
+      ["Cold Storage Tracking", "Post-mortem Records", "Family Notifications"],
+    ],
+  },
+  {
+    id: "insurance",
+    category: "administrative",
+    categoryLabel: "Administrative",
+    title: "Insurance",
+    description:
+      "Policy verification, pre-authorization, and claims processing with TPA integration and settlement reports.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
+      </svg>
+    ),
+    includes: [
+      ["Policy Verification", "Claims Processing", "Pre-authorization"],
+      ["Coverage Tracking", "TPA Integration", "Settlement Reports"],
+    ],
+  },
+];
+
+function MoreModules() {
+  const [filter, setFilter] = useState("all");
+
+  const filteredModules =
+    filter === "all" ? modules : modules.filter((m) => m.category === filter);
+
+  return (
+    <>
+      <div className="module-nav">
+        <HashLink to="/" className="back-home">
+          ← Back to Home
+        </HashLink>
+        <HashLink smooth to="/#demos" className="back-home">
+          Contact Sales
+        </HashLink>
+      </div>
+      <div className="module-hero">
+        <hr />
+        <h3 style={{ color: "white" }}>ALL MODULES</h3>
+        <h1>Every Modle. One Platform.</h1>
+        <h2>
+          CareCentral is fully modular — start with what you need and expand at
+          your own pace. All modules share the same patient database,
+          eliminating duplicate data entry.
+        </h2>
+        <div className="num">
+          <div>
+            <h1>{modules.length}+</h1>
+            <h3>Modules Available</h3>
+          </div>
+          <div>
+            <h1>100%</h1>
+            <h3>Modular Architecture</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="buttons">
+        <button
+          className={filter === "all" ? "filter-btn active" : "filter-btn"}
+          onClick={() => setFilter("all")}
+        >
+          All
+        </button>
+        <button
+          className={filter === "clinical" ? "filter-btn active" : "filter-btn"}
+          onClick={() => setFilter("clinical")}
+        >
+          Clinical
+        </button>
+        <button
+          className={filter === "speciality" ? "filter-btn active" : "filter-btn"}
+          onClick={() => setFilter("speciality")}
+        >
+          Speciality
+        </button>
+        <button
+          className={
+            filter === "administrative" ? "filter-btn active" : "filter-btn"
+          }
+          onClick={() => setFilter("administrative")}
+        >
+          Administrative
+        </button>
+      </div>
+
+      <div className="module-grid" id="my-cards">
+        {filteredModules.map((module) => (
+          <div className="module-cards" key={module.id}>
+            <div className="icons">
+              <div className="icon">{module.icon}</div>
+              <div className="available">
+                <h1>Available</h1>
+              </div>
             </div>
-            <div className="module-hero">
-                <hr/>
-                <h3 style={{color: "white"}}>ALL MODULES</h3>
-                <h1>Every Modle. One Platform.</h1>
-                <h2>CareCentral is fully modular — start with what you need and expand at your own pace. All modules share the same patient database, eliminating duplicate data entry.</h2>
-                <div className="num"><div><h1>18+</h1><h3>Modules Available</h3></div><div><h1>100%</h1><h3>Modular Architecture</h3></div></div>
+            <div>
+              <h1 className="name">{module.categoryLabel}</h1>
             </div>
-                <div className="buttons">
-                <button className={filter === "all" ? "filter-btn active" : "filter-btn"} onClick={() => setFilter("all")}>All</button>
-                <button className={filter === "clinical" ? "filter-btn active" : "filter-btn"} onClick={() => setFilter("clinical")}>Clinical</button>
-                <button className={filter === "speciality" ? "filter-btn active" : "filter-btn"} onClick={() => setFilter("speciality")}>Speciality</button>
-                <button className={filter === "administrative" ? "filter-btn active" : "filter-btn"} onClick={() => setFilter("administrative")}>Administrative</button>
-                </div>
-
-
-            <div className="module-grid" id="my-cards">
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>Patient Management</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Centralised patient records covering registration, medical history, documents, insurance, and a full patient timeline.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Patient Registration</h2>
-                            <h2>✓ Medical History</h2>
-                            <h2>✓ Document Management</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Electronic Medical Records</h2>
-                            <h2>✓ Patient Timeline</h2>
-                            <h2>✓ Insurance Management</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>Appointment Scheduling</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Intelligent scheduling with doctor calendars, walk-in <br/> queue management, automated reminders, and a <br/> reception dashboard.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Doctor Calendar</h2>
-                            <h2>✓ Walk-in Support</h2>
-                            <h2>✓ Reception Dashboard</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Queue Management</h2>
-                            <h2>✓ Automated Reminders</h2>
-                            <h2>✓ Multi-Doctor View</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="6" r="2"/><path d="M6 3v6a5 5 0 0 0 10 0V3"/><path d="M11 14v2a5 5 0 0 0 10 0"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>OPD Consultations</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Full outpatient consultation workflow with SOAP notes, vitals capture, diagnosis coding, procedure tracking, and referrals.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ SOAP Notes</h2>
-                            <h2>✓ Diagnosis Coding</h2>
-                            <h2>✓ Follow-up Scheduling</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Vitals Recording</h2>
-                            <h2>✓ Procedure Tracking</h2>
-                            <h2>✓ Referral Management</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>Laboratory</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>End-to-end lab workflow from request to result — with sample tracking, machine integration, and report generation.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Lab Request Management</h2>
-                            <h2>✓ Sample Tracking</h2>
-                            <h2>✓ Automated Reports</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Test Catalog</h2>
-                            <h2>✓ Result Management</h2>
-                            <h2>✓ Machine Integration</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>ICU Management</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Critical care module with bed management, continuous monitoring, ventilator tracking, and nursing notes.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Admissions Management</h2>
-                            <h2>✓ Continuous Monitoring</h2>
-                            <h2>✓ Nursing Notes</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Bed Management</h2>
-                            <h2>✓ Ventilator Management</h2>
-                            <h2>✓ Critical Care Dashboard</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "clinical") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12h4l2-8 4 16 2-8h8"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">CLINICAL</h1></div>
-                    <h4>IPD</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Manage inpatient admissions, ward assignments, daily progress notes, and discharge summaries.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Admission Management</h2>
-                            <h2>✓ Daily Rounds Notes</h2>
-                            <h2>✓ Discharge Summary</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Ward Assignment</h2>
-                            <h2>✓ Medication Orders</h2>
-                            <h2>✓ Billing Integration</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Dental</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Specialized dental module with tooth charting, treatment planning, and dental imaging integration.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Tooth Charting</h2>
-                            <h2>✓ Dental Imaging</h2>
-                            <h2>✓ Patient Records</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Treatment Planning</h2>
-                            <h2>✓ Appointment Scheduling</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Radiology</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Radiology request and result management with PACS integration readiness and report generation.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Radiology Requests</h2>
-                            <h2>✓ PACS Integration Ready</h2>
-                            <h2>✓ Image Viewing</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Result Management</h2>
-                            <h2>✓ Report Generation</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Pharmacy</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Dispensing, stock management, drug interactions, and prescription fulfillment in one module.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Prescription Dispensing</h2>
-                            <h2>✓ Drug Interaction Alerts</h2>
-                            <h2>✓ Supplier Management</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Drug Inventory</h2>
-                            <h2>✓ Expiry Tracking</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Ophthalmology</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Eye clinic module with visual acuity recording, refraction, and surgical procedure tracking.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Visual Acuity</h2>
-                            <h2>✓ Surgical Planning</h2>
-                            <h2>✓ Patient Timeline</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Refraction Records</h2>
-                            <h2>✓ IOL Calculation</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Gynecology</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Women's health module covering antenatal care, delivery records, and gynaecological consultations.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Antenatal Care</h2>
-                            <h2>✓ Growth Charts</h2>
-                            <h2>✓ Risk Assessment</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Delivery Records</h2>
-                            <h2>✓ Consultation Notes</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9.5"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>ENT</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Ear, Nose & Throat module with audiogram support, nasal endoscopy notes, and procedure tracking.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Audiogram Recording</h2>
-                            <h2>✓ Procedure Tracking</h2>
-                            <h2>✓ Referrals</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Endoscopy Notes</h2>
-                            <h2>✓ Patient Records</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Emergency</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Rapid patient intake for emergency cases with triage scoring, resuscitation notes, and real-time bed status.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Triage Scoring</h2>
-                            <h2>✓ Resuscitation Notes</h2>
-                            <h2>✓ Handover Notes</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Rapid Intake</h2>
-                            <h2>✓ Bed Status Board</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "speciality") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Specialty</h1></div>
-                    <h4>Surgery</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Surgical workflow from pre-op assessment through post-op care, including OT scheduling and anaesthesia notes.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Pre-op Assessment</h2>
-                            <h2>✓ Anaesthesia Notes</h2>
-                            <h2>✓ Post-op Care</h2>
-                        </div>
-                        <div>
-                            <h2>✓ OT Scheduling</h2>
-                            <h2>✓ Surgical Checklists</h2>
-                            <h2>✓ Billing</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "administrative") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="13" x2="16" y2="13"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Administrative</h1></div>
-                    <h4>Inventory</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Real-time stock management for medical supplies and consumables with reorder alerts and supplier tracking.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Stock Management</h2>
-                            <h2>✓ Supplier Management</h2>
-                            <h2>✓ Internal Transfers</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Reorder Alerts</h2>
-                            <h2>✓ Expiry Tracking</h2>
-                            <h2>✓ Reports</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "administrative") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="14" y1="18" x2="16" y2="18"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Administrative</h1></div>
-                    <h4>Finance & Billing</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Full revenue cycle management with patient billing, insurance claims, receipts, and financial reporting.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Patient Billing</h2>
-                            <h2>✓ Payment Receipts</h2>
-                            <h2>✓ Tax Compliance</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Insurance Claims</h2>
-                            <h2>✓ Financial Reports</h2>
-                            <h2>✓ Odoo Accounting</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "administrative") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><polyline points="17 11 19 13 23 9"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Administrative</h1></div>
-                    <h4>HR & Payroll</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Staff management from onboarding to payroll — contracts, leaves, payslips, and performance tracking.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Employee Onboarding</h2>
-                            <h2>✓ Leave Management</h2>
-                            <h2>✓ Payslips</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Contract Management</h2>
-                            <h2>✓ Payroll Processing</h2>
-                            <h2>✓ Performance Reviews</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-
-                {(filter === "all" || filter === "administrative") && (
-                <div className="module-cards">
-                    <div className="icons">
-                        <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
-                        <div className="available"><h1>Available</h1></div></div>
-                    <div><h1 className="name">Administrative</h1></div>
-                    <h4>Attendance</h4>
-                    <h3 style={{color: "rgb(100, 101, 105)"}}>Biometric and manual attendance tracking with shift management and overtime calculation.</h3>
-                    <h5 style={{color: "gray", marginTop:"30px", marginBottom:"3px"}}>INCLUDES</h5>
-                    <div className="text-grids">
-                        <div>
-                            <h2>✓ Biometric Integration</h2>
-                            <h2>✓ Shift Management</h2>
-                            <h2>✓ Leave Integration</h2>
-                        </div>
-                        <div>
-                            <h2>✓ Manual Attendance</h2>
-                            <h2>✓ Overtime Calculation</h2>
-                            <h2>✓ Reports</h2>
-                        </div>
-                    </div>
-                    <h5 className = "learn-more">Learn More</h5>
-
-                </div>
-                )}
-                
+            <h4>{module.title}</h4>
+            <h3 style={{ color: "rgb(100, 101, 105)" }}>{module.description}</h3>
+            <h5 style={{ color: "gray", marginTop: "30px", marginBottom: "3px" }}>
+              INCLUDES
+            </h5>
+            <div className="text-grids">
+              <div>
+                {module.includes[0].map((item) => (
+                  <h2 key={item}>✓ {item}</h2>
+                ))}
+              </div>
+              <div>
+                {module.includes[1].map((item) => (
+                  <h2 key={item}>✓ {item}</h2>
+                ))}
+              </div>
             </div>
+            <h5 className="learn-more">Learn More</h5>
+          </div>
+        ))}
+      </div>
 
-            <div className="bottom">
-                <h1 style={{color: "white"}}>Ready to Get Started?</h1>
-                <h2>Talk to our team and find the right combination of modules for your facility.</h2>
-                
-                <div className="bottom-buttons">
-                <HashLink to="/" className="button1">← Back to Home</HashLink>
-                <HashLink to="/#demos" className="button2" style={{color:"#2e7ed8", fontWeight:"500"}}>Contact Sales →</HashLink>
-                </div>
-                
-            </div>
+      <div className="bottom">
+        <h1 style={{ color: "white" }}>Ready to Get Started?</h1>
+        <h2>
+          Talk to our team and find the right combination of modules for your
+          facility.
+        </h2>
 
-            <div className="bottom-nav">
-                <span>© 2024 Beltech Solutions · CareCentral Healthcare ERP</span>
-            </div>
-        </>
-    )
+        <div className="bottom-buttons">
+          <HashLink to="/" className="button1">
+            ← Back to Home
+          </HashLink>
+          <HashLink
+            to="/#demos"
+            className="button2"
+            style={{ color: "#2e7ed8", fontWeight: "500" }}
+          >
+            Contact Sales →
+          </HashLink>
+        </div>
+      </div>
+
+      <div className="bottom-nav">
+        <span>© 2024 Beltech Solutions · CareCentral Healthcare ERP</span>
+      </div>
+    </>
+  );
 }
+
 export default MoreModules;
