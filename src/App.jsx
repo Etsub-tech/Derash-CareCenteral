@@ -6,11 +6,13 @@ import Question from "./question.jsx";
 import Contact from "./contact.jsx";
 import MoreModules from "./more-modules.jsx";
 
+import ScrollToTop from "./ScrollToTop";
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
-        {/* Home page */}
         <Route path="/" element={<Home />} />
 
         {/* Pricing page */}
@@ -26,3 +28,5 @@ function App() {
 }
 
 export default App;
+
+

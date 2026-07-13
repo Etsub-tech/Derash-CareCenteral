@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./more-module.css";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function MoreModules(){
     const [filter, setFilter] = useState("all");
@@ -8,8 +8,10 @@ function MoreModules(){
     return(
         <>
             <div className= "module-nav">
-                <NavLink to="/" className="back-home">← Back to Home</NavLink>
-                <NavLink to="/#demos" className="back-home">Contact Sales</NavLink>
+                <HashLink to="/" className="back-home">← Back to Home</HashLink>
+                <HashLink smooth to="/#demos" className="back-home">
+                    Contact Sales
+                </HashLink>
             </div>
             <div className="module-hero">
                 <hr/>
@@ -503,8 +505,8 @@ function MoreModules(){
                 <h2>Talk to our team and find the right combination of modules for your facility.</h2>
                 
                 <div className="bottom-buttons">
-                <NavLink to="/" className="button1">← Back to Home</NavLink>
-                <NavLink to="/#demos" className="button2" style={{color:"#2e7ed8", fontWeight:"500"}}>Contact Sales →</NavLink>
+                <HashLink to="/" className="button1">← Back to Home</HashLink>
+                <HashLink to="/#demos" className="button2" style={{color:"#2e7ed8", fontWeight:"500"}}>Contact Sales →</HashLink>
                 </div>
                 
             </div>

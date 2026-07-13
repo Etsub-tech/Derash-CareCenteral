@@ -9,6 +9,7 @@ import logo from './assets/logo.png';
 import logoOnly from './assets/logo-only.png';
 import { Link } from "react-router-dom";
 
+
 function Home(){
         const scrollToFeatures = () => {
         const section = document.getElementById("features");
@@ -87,7 +88,7 @@ function Home(){
                 </button>                </div>
 
                 <div className='the-3'> 
-                    <span>✓ HIPAA Aligned</span>
+                    <span>✓ Modularized</span>
                     <span>✓ Multi-Branch</span>
                     <span>✓ Cloud & On-Premise</span>
                 </div>
@@ -399,8 +400,7 @@ function Home(){
                 </div>
                 
             </div>  
-                <Link to="/more-modules">Modules</Link>
-
+              <Link className = "more-modules" to="/more-modules"> See More Modules →</Link>
             </div>
 
             <div className = "second-blue">

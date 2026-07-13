@@ -322,7 +322,7 @@ h1{
 }
 
 .second-card:hover, .second-card-exc:hover{
-    background-color: rgb(229, 249, 255);
+    background-color: rgb(242, 242, 242);
     margin-top: 5px;
     box-shadow: none;
     transition: 0.3s
@@ -1172,6 +1172,9 @@ h1{
 .third-white-cards .icon-square{
     margin-left: auto;
     margin-right: auto;
+}
+.third-white-cards h3{
+    color: rgb(88, 88, 88);
 }
 
 .icon-circle-blue{
