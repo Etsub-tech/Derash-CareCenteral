@@ -23,6 +23,7 @@ function Price(){
                             <h2>✓ Laboratory Module</h2>
                             <h2>✓ ICU Module</h2>
                             <h2>✓ Cloud Hosting Included</h2>
+                            <h2>✓ 5 Months Free Support</h2>
                             <h2>✓ Email & Telegram Support</h2>
                             <h2>✓ Regular Updates</h2>
 
@@ -38,7 +39,7 @@ function Price(){
                             <h5>✓ All Core Modules</h5>
                             <h5>✓ On-Premise or Cloud Setup</h5>
                             <h5>✓ Custom Configuration</h5>
-                            <h5>✓ 3 Months Free Support</h5>
+                            <h5>✓ 5 Months Free Support</h5>
                             <h5>✓ Data Migration Assistance</h5>
                             <h5>✓ Dedicated Implementation Team</h5>
 

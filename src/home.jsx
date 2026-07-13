@@ -73,7 +73,7 @@ function Home(){
             </div>
 
             <div className = "hero">
-                <div className = "made-for-eth"><span>EEnterprise EMR+ ERP· Made for Ethiopia</span></div>
+                <div className = "made-for-eth"><span>Enterprise EMR+ ERP· Made for Ethiopia</span></div>
                 <a style={{fontSize: "60px", fontWeight: "bold"}}>Healthcare </a> <a style={{fontSize: "60px", fontWeight: "bold", color: "#acd1f7"}}>Management Made</a><h1 style={{fontSize: "60px", fontWeight: "bold", color: "white", marginBottom: "60px"}}>Simple.</h1>
                 <h3>CareCentral is a modern Healthcare ERP built on Odoo that
                     <br/>helps clinics and hospitals streamline patient care,
@@ -399,7 +399,7 @@ function Home(){
                 </div>
                 
             </div>  
-                <Link className = "more-modules" to="/more-modules"> See More Modules →</Link>
+                <Link to="/more-modules">Modules</Link>
 
             </div>
 
@@ -663,18 +663,11 @@ function Home(){
 
 
     <div className="footer">
-    <div className="footer-nav">
-        <a href="#features">Features</a>
-        <a>Modules</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#questions">FAQ</a>
-    </div>
 
     <div className="footer-grid">
         <div className="footer-brand">
             <div className="footer-logo"><img src={logo} alt="Logo" /></div>
-            <h3>A modern Healthcare ERP by Beltech Solutions — empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
+            <h3>A modern Healthcare EMR+ ERP by Beltech Solutions — empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
             <div className="footer-socials">
                 <span>in</span>
                 <span>f</span>
@@ -702,8 +695,8 @@ function Home(){
 
     <div className="footer-contact">
         <h4>CONTACT</h4>
-        <span>✉ hello@carecentral.et</span>
-        <span>📞 +251 91 234 5678</span>
+        <span>✉ beltechsolns@gmail.com</span>
+        <span>📞 +251 95 593 5455</span>
     </div>
 
     <hr/>

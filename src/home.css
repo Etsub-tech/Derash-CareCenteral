@@ -525,10 +525,18 @@ h1{
     border: 2px, solid rgb(224, 227, 255);
     padding: 25px;
     background-color: rgb(245, 245, 245);
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: left;
     margin-bottom: 40px;
-    height: 550px
+    height: 560px
+}
+
+.price-blue{
+    padding: 25px;
+    border-radius: 20px;
+    background-color:#256dbe;
+    text-align: left;
+    height: 560px
 }
 
 .price-white:hover, .price-blue:hover{
@@ -546,7 +554,7 @@ h1{
 
 .price-white button{
     padding: 15px;
-    margin-top: 40px;
+    margin-top: 50px;
     width: 100%;
     border-radius: 16px;
     border:none;
@@ -554,14 +562,7 @@ h1{
     color: white;
 }
 
-.price-blue{
-    padding: 25px;
-    border-radius: 20px;
-    background-color:#256dbe;
 
-    text-align: left;
-    height: 550px
-}
 
 .price-blue h1, .price-blue span, .price-blue h5{
     color: rgb(199, 219, 253);
@@ -581,7 +582,7 @@ h1{
 .price-blue button {
     background: white;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 100%;
     border-radius: 16px;
     border:none;
