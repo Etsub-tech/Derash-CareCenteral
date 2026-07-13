@@ -686,6 +686,7 @@ function Home(){
                     </a>
 
                     <a href="beltechsolns@gmail.com">
+                        
                     ✉
                     </a>
             </div>
@@ -693,11 +694,11 @@ function Home(){
 
         <div className="footer-links">
             <h4>COMPANY</h4>
-            <a>About Us</a>
-            <a>Features</a>
-            <a>Pricing</a>
-            <a>Support</a>
-            <a>Contact</a>
+                <a href="#features">Features</a>
+                <Link to="/more-modules">Modules</Link>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <a href="#questions">FAQ</a>
         </div>
 
         <div className="footer-links">

@@ -85,7 +85,7 @@ a{
 }
 
 .my-cards{
-    background-color: gray;
+    background-color: rgb(162, 161, 161);
 }
 
 .filter-btn{
@@ -118,7 +118,7 @@ a{
     grid-template-columns: 1fr 1fr;
     border-radius: 15px;
     padding: 50px;
-    gap: 50px;
+    gap: 30px;
     background-color: rgb(242, 242, 242);
 }
 
@@ -184,12 +184,12 @@ a{
     border-radius: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 40px;
-    box-shadow: 4px 4px 20px rgb(211, 211, 211);
+    margin-top: 33px;
+    box-shadow: 4px 4px 20px rgb(229, 229, 229);
 }
 
 .module-cards:hover{
-    box-shadow: 4px 4px 30px rgb(192, 192, 192);
+    box-shadow: 4px 4px 30px rgb(222, 222, 222);
 }
 
 .module-cards h2{
