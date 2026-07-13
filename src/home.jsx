@@ -669,10 +669,25 @@ function Home(){
             <div className="footer-logo"><img src={logo} alt="Logo" /></div>
             <h3>A modern Healthcare EMR+ ERP by Beltech Solutions — empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
             <div className="footer-socials">
-                <span>in</span>
-                <span>f</span>
-                <span>➤</span>
-                <span>✉</span>
+                <a
+                    href="https://www.linkedin.com/company/carecentral"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    in
+                    </a>
+
+                    <a
+                    href="https://t.me/belTechSolns"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    ➤
+                    </a>
+
+                    <a href="beltechsolns@gmail.com">
+                    ✉
+                    </a>
             </div>
         </div>
 

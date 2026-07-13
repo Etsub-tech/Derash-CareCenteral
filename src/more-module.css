@@ -76,13 +76,12 @@ a{
 .buttons{
     display: flex;
     align-items: center;
-    background-color: white;
     padding-left: 40px;
     gap: 15px;
     height: 60px;
-    box-shadow: 1px 3px 2px rgb(216, 216, 216);
     z-index: 1000;
     position: relative;
+    background-color: rgb(242, 242, 242);
 }
 
 .my-cards{
@@ -186,11 +185,11 @@ a{
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 40px;
-    box-shadow: 4px 4px 5px rgb(150, 150, 150);
+    box-shadow: 4px 4px 20px rgb(211, 211, 211);
 }
 
 .module-cards:hover{
-    box-shadow: 4px 4px 10px rgb(150, 150, 150);
+    box-shadow: 4px 4px 30px rgb(192, 192, 192);
 }
 
 .module-cards h2{

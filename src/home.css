@@ -1052,7 +1052,8 @@ h1{
     margin-top: 15px;
 }
 
-.footer-socials span{
+.footer-socials a{
+    text-decoration: none;
     background-color: rgb(40, 48, 68);
     color: white;
     width: 35px;
