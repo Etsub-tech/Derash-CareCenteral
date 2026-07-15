@@ -29,8 +29,7 @@ function Price(){
 
                             <button onClick={scrollToDemo}>Request Demo</button>
                         </div>
-                        <div className = "price-blue">
-                            <h4 style={{paddingLeft:"8px"}}>One-Time Implementation</h4>
+                        <div className = "price-blue">                            <h4 style={{paddingLeft:"8px"}}>One-Time Implementation</h4>
                             <span style = {{fontWeight: "bold", fontSize: "15px", fontColor: "white"}}>One-time plan</span><br/>
                             <span style =  {{fontWeight: "bold", fontSize: "30px", color: "white"}}>Custom</span> <span>ETB</span>
                             <h3>Full implementation for hospitals and networks.</h3>

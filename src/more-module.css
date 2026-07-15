@@ -11,7 +11,7 @@ a{
   z-index: 10000;
   background-color: white;
   width: 100%;
-  box-shadow: 1px 3px 10px rgb(174, 169, 255);
+  box-shadow: 1px 3px 10px rgb(224, 223, 255);
   padding: 0px 20px;
 }
 
@@ -173,7 +173,7 @@ a{
 
 
 .module-cards{
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(244, 245, 249);
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
@@ -183,7 +183,8 @@ a{
 }
 
 .module-cards:hover{
-    box-shadow: 4px 4px 30px rgb(195, 195, 195);
+    box-shadow: 2px 2px 20px rgb(219, 219, 219);
+    transition: 0.3s;
 }
 
 .module-cards h2{
@@ -225,7 +226,7 @@ a{
 }
 
 .bottom-buttons a{
-    padding:16px 30px;
+    padding:1px 30px;
     color: white;
     border-radius: 20px;
     border: none;

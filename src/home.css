@@ -47,7 +47,7 @@ h1{
   z-index: 1000;
   background-color: white;
   width: 100%;
-  box-shadow: 1px 3px 10px rgb(174, 169, 255);
+  box-shadow: 1px 1px 10px rgb(221, 219, 254);
 }
 
 
@@ -252,7 +252,7 @@ h1{
     padding-top: 80px;
     padding-bottom: 40px;
     text-align: center;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(244, 245, 249);
 }
 
 .gray hr{
@@ -322,7 +322,7 @@ h1{
 }
 
 .second-card:hover, .second-card-exc:hover{
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(244, 245, 249);
     margin-top: 5px;
     box-shadow: none;
     transition: 0.3s
@@ -462,7 +462,7 @@ h1{
 }
 
 .third-white-cards{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(244, 245, 249);
     border-radius: 10px;
 }
 
@@ -470,7 +470,7 @@ h1{
     padding-top: 8px;
     margin-top: 65px;
     text-align: center;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(244, 245, 249);
     padding-bottom: 60px;   
 }
 
@@ -517,6 +517,7 @@ h1{
     padding-right: 150px;
     padding-left: 150px;
     margin-top: 60px;
+    margin-bottom: 50px;
 
     
 }
@@ -524,10 +525,9 @@ h1{
 .price-white{
     border: 2px, solid rgb(224, 227, 255);
     padding: 25px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(244, 245, 249);
     border-radius: 20px;
     text-align: left;
-    margin-bottom: 40px;
     height: 560px
 }
 
@@ -542,8 +542,7 @@ h1{
 .price-white:hover, .price-blue:hover{
     margin-top: -10px;
     transition: all 0.5s ease;
-    box-shadow: 9px 5px 50px rgb(190, 186, 231);
-    
+    box-shadow: 9px 5px 50px rgb(221, 218, 254);
 }
 
 .price-white h2{
