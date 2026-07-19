@@ -115,9 +115,10 @@ a{
 .module-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 15px;
+    border-radius: 24px;
     padding: 50px;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    gap: 16px;
 }
 
 .icons{
@@ -153,38 +154,42 @@ a{
 }
 
 .name{
-    color: #3898d0;
+    color: #2f6fa8;
     font-size: 15px;
     letter-spacing: 0px;
-    background-color: rgba(111, 196, 235, 0.2);
-    padding: 2px 6px;
-    border-radius: 7px;
-    border-color:#3898d0;
+    background-color: rgba(111, 196, 235, 0.16);
+    padding: 6px 10px;
+    border-radius: 10px;
     display: inline-block;
-    margin-top: -1px;
-    margin-bottom: -1px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(82, 133, 189, 0.18);
 }
 
 .text-grids{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 40px;
+    padding-bottom: 24px;
+    gap: 8px 18px;
 }
 
 
 .module-cards{
-    background-color: rgb(244, 245, 249);
-    padding-left: 20px;
-    padding-right: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f7fd 100%);
+    padding: 24px 22px 26px 22px;
     border-radius: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 33px;
+    margin: 0;
+    border: 1px solid rgba(92, 128, 179, 0.16);
+    box-shadow: 0 12px 26px rgba(26, 63, 113, 0.08);
+    border-left: 4px solid  #4e9ccc;
+
 }
 
 .module-cards:hover{
-    box-shadow: 2px 2px 20px rgb(219, 219, 219);
-    transition: 0.3s;
+    box-shadow: 0 20px 38px rgba(26, 63, 113, 0.14);
+    transform: translateY(-2px);
+    transition: all 0.25s ease;
+    border-left: 4px solid #6777d1;
 }
 
 .module-cards h2{

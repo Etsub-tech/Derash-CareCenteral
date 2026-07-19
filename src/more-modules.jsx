@@ -622,7 +622,7 @@ function MoreModules() {
         <h3 style={{ color: "white" }}>ALL MODULES</h3>
         <h1>Every Modle. One Platform.</h1>
         <h2>
-          CareCentral is fully modular — start with what you need and expand at
+          CareCentral is fully modular start with what you need and expand at
           your own pace. All modules share the same patient database,
           eliminating duplicate data entry.
         </h2>
@@ -668,7 +668,7 @@ function MoreModules() {
       </div>
 
       <div className="module-grid" id="my-cards">
-        {filteredModules.map((module, i) => (
+        {filteredModules.map((module) => (
           <div className="module-cards" key={module.id}>
             <div className="icons">
               <div className="icon">{module.icon}</div>
@@ -677,10 +677,7 @@ function MoreModules() {
               </div>
             </div>
             <div>
-              <h1 className="name">
-                <span className="module-index">N°{String(i + 1).padStart(2, "0")}</span>{" "}
-                {module.categoryLabel}
-              </h1>
+              <h1 className="name">{module.categoryLabel}</h1>
             </div>
             <h4>{module.title}</h4>
             <h3 style={{ color: "rgb(100, 101, 105)" }}>{module.description}</h3>

@@ -13,7 +13,7 @@ function Price(){
 
                     <div className = "prices">
                         <div className = "price-white">
-                            <h4 style={{paddingLeft:"15px"}}>Monthly Subscription</h4>
+                            <h4 >Monthly Subscription</h4>
                             <h2 style = {{fontWeight: "bold", fontSize: "24"}}>SaaS Plan</h2>
                             <span style =  {{fontWeight: "bold", fontSize: "30px", color: "black"}}>Custom</span> <span style =  {{color: "gray"}}>ETB/month</span>
                             <h3>ideal for clinics and growing facilities</h3>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Price from "./price.jsx";
 import Question from "./question.jsx";
 import Contact from "./contact.jsx";
@@ -7,10 +7,77 @@ import Demo from "./demo.jsx";
 import './home.css';
 import logo from './assets/logo.png';
 import logoOnly from './assets/logo-only.png';
+import patientImage from './assets/patient.jpg';
+import appointmentImage from './assets/appointment.jpg';
+import opdImage from './assets/opd.jpg';
+import laboratoryImage from './assets/laboratory.jpg';
+import icuImage from './assets/icu.jpg';
+import integrationImage from './assets/integration.jpg';
 import { Link } from "react-router-dom";
 
 
 function Home(){
+        const facilityCards = [
+            {
+                image: patientImage,
+                title: 'Patient Management',
+                icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                ),
+                list: ['Patient Registration', 'Electronic Medical Records', 'Medical History', 'Patient Timeline', 'Documents', 'Insurance']
+            },
+            {
+                image: appointmentImage,
+                title: 'Appointment Scheduling',
+                icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                ),
+                list: ['Doctor Calendar', 'Queue Management', 'Walk-ins', 'Reminders', 'Reception Dashboard']
+            },
+            {
+                image: opdImage,
+                title: 'OPD Consultations',
+                icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12h4l2-8 4 16 2-8h8"/></svg>
+                ),
+                list: ['SOAP Notes', 'Vitals', 'Diagnoses', 'Procedures', 'Follow-ups', 'Referrals']
+            },
+            {
+                image: laboratoryImage,
+                title: 'Laboratory',
+                icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg>
+                ),
+                list: ['Lab Requests', 'Test Catalog', 'Sample Tracking', 'Result Management', 'Reports', 'Machine Integration']
+            },
+            {
+                image: icuImage,
+                title: 'ICU',
+                icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg>
+                ),
+                list: ['Admissions', 'Bed Management', 'Continuous Monitoring', 'Ventilator Management', 'Nursing Notes', 'Critical Care Dashboard']
+            },
+            {
+                image: integrationImage,
+                title: 'Machine Integration',
+                icon: (
+                    <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1z"/></svg>
+                ),
+                list: ['Lab analyzers', 'Medical devices', 'Result capture automation', 'Real-time data sync', 'Operational visibility']
+            }
+        ];
+        const [activeFacility, setActiveFacility] = useState(0);
+        const facilityCardRefs = useRef([]);
+
+        const scrollToFacilityCard = (index) => {
+            setActiveFacility(index);
+            facilityCardRefs.current[index]?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'start',
+            });
+        };
         const scrollToFeatures = () => {
         const section = document.getElementById("features");
         section.scrollIntoView({ behavior: "smooth" });
@@ -315,92 +382,44 @@ function Home(){
                 <div className='title'><h1 >Everything Your Facility Needs</h1></div>
                 <h3 style = {{color: "gray"}}>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
 
-            <div className="second-row-cards"> 
-                <div className="second-card">
-                    <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <h2 style={{color: "gray", fontWeight: "400"}}>Patient Management</h2>
-                    <h3>✓ Patient Registration</h3>
-                    <h3>✓ Electronic Medical Records</h3>
-                    <h3>✓ Medical History</h3>
-                    <h3>✓ Patient Timeline</h3>
-                    <h3>✓ Documents</h3>
-                    <h3>✓ Insurance</h3>
-                    <Link className="learn-more-link" to="/more-modules">
-    Learn More →
-</Link>
+                <div className="facility-carousel" role="region" aria-label="Everything your facility needs modules">
+                    {facilityCards.map((facility, index) => (
+                        <div
+                            key={facility.title}
+                            className={`facility-card ${activeFacility === index ? 'active' : ''}`}
+                            ref={(element) => (facilityCardRefs.current[index] = element)}
+                            onMouseEnter={() => setActiveFacility(index)}
+                        >
+                            <div className="facility-visual">
+                                <img src={facility.image} alt={facility.title} />
+                                <div className="facility-visual-footer">
+                                    <div className="icon-circle">{facility.icon}</div>
+                                    <h2>{facility.title}</h2>
+                                </div>
+                            </div>
+                            <div className="facility-list">
+                                {facility.list.map((item) => (
+                                    <h3 key={item}>✓ {item}</h3>
+                                ))}
+                                <Link className="learn-more-link" to="/more-modules">Learn More →</Link>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
-                <div className = "second-card">
-                    <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                    <h2 style={{color: "gray", fontWeight: "400"}}>Appointment Scheduling</h2>
-                    <h3>✓ Doctor Calendar</h3>
-                    <h3>✓ Queue Management</h3>
-                    <h3>✓ Walk-ins</h3>
-                    <h3>✓ Reminders</h3>
-                    <h3>✓ Reception Dashboard</h3>
-                    <Link className="learn-more-link" to="/more-modules">
-    Learn More →
-</Link>
-                </div>
-            </div>
-
-            
-            <div className="second-row-cards"> 
-                <div className="second-card">
-                <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12h4l2-8 4 16 2-8h8"/></svg></div>
-                    <h2 style={{color: "gray", fontWeight: "400"}}>OPD Consultations</h2>
-                    <h3>✓ SOAP Notes</h3>
-                    <h3>✓ Vitals</h3>
-                    <h3>✓ Diagnoses</h3>
-                    <h3>✓ Procedures</h3>
-                    <h3>✓ Follow-ups</h3>
-                    <h3>✓ Referrals</h3>
-                    <Link className="learn-more-link" to="/more-modules">
-    Learn More →
-</Link>
-                </div>
-                <div className = "second-card">
-                    <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg></div>
-
-                    <h2 style={{color: "gray", fontWeight: "400"}}>Laboratory</h2>
-                    <h3>✓ Lab Requests</h3>
-                    <h3>✓ Test Catalog</h3>
-                    <h3>✓ Sample Tracking</h3>
-                    <h3>✓ Result Management</h3>
-                    <h3>✓ Reports</h3>
-                    <h3>✓ Machine Integration</h3>
-                    <Link className="learn-more-link" to="/more-modules">
-    Learn More →
-</Link>
-                </div>
-                
-            </div>
-
-
-            <div className="second-row-cards"> 
-                <div className="second-card">
-                <div className="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>                    
-                    <h2 style={{color: "gray", fontWeight: "400"}}>ICU</h2>
-                    <h3>✓ Admissions</h3>
-                    <h3>✓ Bed Management</h3>
-                    <h3>✓ Continuous Monitoring</h3>
-                    <h3>✓ Ventilator Management</h3>
-                    <h3>✓ Nursing Notes</h3>
-                    <h3>✓ Critical Care Dashboard</h3>
-                    <Link className="learn-more-link" to="/more-modules">
-    Learn More →
-</Link>
+                <div className="facility-progress-dots" aria-label="Carousel navigation dots">
+                    {facilityCards.map((facility, index) => (
+                        <button
+                            key={facility.title}
+                            className={`progress-dot ${activeFacility === index ? 'active' : ''}`}
+                            type="button"
+                            onClick={() => scrollToFacilityCard(index)}
+                            aria-label={`Go to ${facility.title}`}
+                        />
+                    ))}
                 </div>
 
-                <div className = "second-card-exc">
-                    <div className="icon-white-circle"><svg viewBox="0 0 24 24" width="25" height="25"  fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1z"/></svg></div>
-                    <h2>Machine Integration</h2>
-                    <h3 style={{color: "black"}}>Connect lab analyzers and medical devices directly to <br/> CareCentral for automated result capture.</h3>
-                    <h4>Ready for Integration</h4>
-                </div>
-                
-            </div>  
-              <Link className = "more-modules" to="/more-modules"> See More Modules →</Link>
+                <Link className = "more-modules" to="/more-modules"> See More Modules →</Link>
             </div>
 
             <div className = "second-blue">
