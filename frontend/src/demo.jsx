@@ -193,7 +193,7 @@ function Demo(){
 
             {status === "success" && (
                 <h3 style={{ color: "rgb(39, 201, 63)", marginBottom: "15px" }}>
-                    Thank you! Your demo request has been submitted — we'll be in touch within 24 hours.
+                    Thank you! Your demo request has been submitted we'll be in touch soon.
                 </h3>
             )}
 
