@@ -13,9 +13,7 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Patient Management",
-    description:
-      "Centralised patient records covering registration, medical history, documents, insurance, and a full patient timeline.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
@@ -32,8 +30,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Appointment Scheduling",
-    description:
-      "Intelligent scheduling with doctor calendars, walk-in queue management, automated reminders, and a reception dashboard.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -52,8 +48,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "OPD Consultations",
-    description:
-      "Full outpatient consultation workflow with SOAP notes, vitals capture, diagnosis coding, procedure tracking, and referrals.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="18" cy="6" r="2" />
@@ -71,8 +65,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Laboratory",
-    description:
-      "End-to-end lab workflow from request to result — with sample tracking, machine integration, and report generation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2" />
@@ -89,9 +81,7 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "ICU Management",
-    description:
-      "Critical care module with bed management, continuous monitoring, ventilator tracking, and nursing notes.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="3" y="10" width="18" height="8" rx="1" />
         <path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" />
@@ -107,8 +97,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "IPD",
-    description:
-      "Manage inpatient admissions, ward assignments, daily progress notes, and discharge summaries.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M2 12h4l2-8 4 16 2-8h8" />
@@ -124,8 +112,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Infection Control",
-    description:
-      "Track outbreaks, manage isolation protocols, and stay audit-ready with full surveillance and compliance reporting.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z" />
@@ -142,8 +128,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Telemedicine",
-    description:
-      "Video consultations, e-prescriptions, and remote patient monitoring — all synced with the same patient record.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M23 7l-7 5 7 5V7z" />
@@ -160,8 +144,6 @@ const modules = [
     category: "clinical",
     categoryLabel: "CLINICAL",
     title: "Admission",
-    description:
-      "Streamlined patient admission with bed allocation, deposit handling, and insurance verification up front.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 2h6a1 1 0 0 1 1 1v1H8V3a1 1 0 0 1 1-1z" />
@@ -182,8 +164,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Dental",
-    description:
-      "Specialized dental module with tooth charting, treatment planning, and dental imaging integration.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -200,8 +180,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Radiology",
-    description:
-      "Radiology request and result management with PACS integration readiness and report generation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="2" y="4" width="20" height="13" rx="2" />
@@ -219,8 +197,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Pharmacy",
-    description:
-      "Dispensing, stock management, drug interactions, and prescription fulfillment in one module.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M21 8l-9-5-9 5 9 5 9-5z" />
@@ -237,8 +213,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Ophthalmology",
-    description:
-      "Eye clinic module with visual acuity recording, refraction, and surgical procedure tracking.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
@@ -255,8 +229,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Gynecology",
-    description:
-      "Women's health module covering antenatal care, delivery records, and gynaecological consultations.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -275,8 +247,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "ENT",
-    description:
-      "Ear, Nose & Throat module with audiogram support, nasal endoscopy notes, and procedure tracking.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M6 18h8" />
@@ -297,8 +267,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Emergency",
-    description:
-      "Rapid patient intake for emergency cases with triage scoring, resuscitation notes, and real-time bed status.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
@@ -315,8 +283,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Surgery",
-    description:
-      "Surgical workflow from pre-op assessment through post-op care, including OT scheduling and anaesthesia notes.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="6" cy="6" r="3" />
@@ -336,8 +302,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Blood Bank",
-    description:
-      "Donor management, blood typing, and inventory tracking with cross-matching and expiry alerts built in.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z" />
@@ -353,8 +317,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Vaccination",
-    description:
-      "Immunization scheduling and vaccine inventory management, with certificates and adverse-event reporting.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 21l6-6" />
@@ -373,8 +335,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Dialysis",
-    description:
-      "Dialysis session scheduling, machine allocation, and fluid balance tracking for every visit.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 2v20" />
@@ -392,8 +352,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Oncology",
-    description:
-      "Chemotherapy and radiation planning with tumor staging, treatment protocols, and follow-up tracking.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 2c-2 4-2 6 0 8s2 4 0 8" />
@@ -410,8 +368,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Pediatrics",
-    description:
-      "Growth charts, immunization tracking, and developmental milestones in a dedicated child-care workflow.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -430,9 +386,7 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Cardiology",
-    description:
-      "ECG management and cath lab scheduling with cardiac risk scoring and device tracking.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
         <polyline points="7 12 10 12 11 9 13 15 14 12 17 12" />
@@ -448,8 +402,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Dermatology",
-    description:
-      "Skin condition imaging, biopsy tracking, and treatment plans with before/after photo history.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="11" cy="11" r="7" />
@@ -466,8 +418,6 @@ const modules = [
     category: "speciality",
     categoryLabel: "Specialty",
     title: "Physiotherapy",
-    description:
-      "Session scheduling and exercise plans with progress tracking across the full course of therapy.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="4" r="2" />
@@ -489,8 +439,6 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "Inventory",
-    description:
-      "Real-time stock management for medical supplies and consumables with reorder alerts and supplier tracking.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="4" y="2" width="16" height="20" rx="2" />
@@ -508,9 +456,7 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "Finance & Billing",
-    description:
-      "Full revenue cycle management with patient billing, insurance claims, receipts, and financial reporting.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="4" y="2" width="16" height="20" rx="2" />
         <line x1="8" y1="6" x2="16" y2="6" />
@@ -532,8 +478,6 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "HR & Payroll",
-    description:
-      "Staff management from onboarding to payroll — contracts, leaves, payslips, and performance tracking.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="9" cy="7" r="4" />
@@ -551,8 +495,6 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "Attendance",
-    description:
-      "Biometric and manual attendance tracking with shift management and overtime calculation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -569,9 +511,7 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "Mortuary",
-    description:
-      "Body registration and cold storage tracking with release documentation and family notifications.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="4" y="4" width="16" height="16" rx="2" />
         <line x1="4" y1="12" x2="20" y2="12" />
@@ -587,9 +527,7 @@ const modules = [
     category: "administrative",
     categoryLabel: "Administrative",
     title: "Insurance",
-    description:
-      "Policy verification, pre-authorization, and claims processing with TPA integration and settlement reports.",
-    icon: (
+   icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
       </svg>
@@ -671,15 +609,14 @@ function MoreModules() {
         {filteredModules.map((module) => (
           <div className="module-cards" key={module.id}>
             <div className="icons">
-              <div className="icon">{module.icon}</div>
               <div className="available">
-                <h1>Available</h1>
               </div>
             </div>
-            <div>
-              <h1 className="name">{module.categoryLabel}</h1>
-            </div>
-            <h4>{module.title}</h4>
+            
+            <div className="icon-title">
+            <span className="icon">{module.icon}</span>
+            <h4 className="module-title">{module.title}</h4>
+          </div>
             <h3 style={{ color: "rgb(100, 101, 105)" }}>{module.description}</h3>
             <h5 style={{ color: "gray", marginTop: "30px", marginBottom: "3px" }}>
               INCLUDES
@@ -696,7 +633,6 @@ function MoreModules() {
                 ))}
               </div>
             </div>
-            <h5 className="learn-more">Learn More</h5>
           </div>
         ))}
       </div>
@@ -704,8 +640,7 @@ function MoreModules() {
       <div className="bottom">
         <h1 style={{ color: "white" }}>Ready to Get Started?</h1>
         <h2>
-          Talk to our team and find the right combination of modules for your
-          facility.
+          Talk to our team to find the right module mix for your facility.          facility.
         </h2>
 
         <div className="bottom-buttons">

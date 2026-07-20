@@ -1,3 +1,4 @@
+
 a{
     text-decoration: none;
     font-size: 14px;
@@ -81,10 +82,7 @@ a{
     height: 60px;
     z-index: 1000;
     position: relative;
-}
-
-.my-cards{
-    background-color: rgb(162, 161, 161);
+    background-color: #f7fbff;
 }
 
 .filter-btn{
@@ -95,6 +93,7 @@ a{
     background: none;
     border: none;
     font-size: 14px;
+    background-color: #f7fbff;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
 }
@@ -112,28 +111,67 @@ a{
     background-color: #2670bd;
 }
 
+/* ---------------- MODULE CARDS ---------------- */
+.icon-title {
+  display: flex;
+  align-items: center; 
+  gap: 8px;         
+  margin-top: 10px;  
+}
+
+.module-title {
+  margin: 0;
+}
+
+
 .module-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     border-radius: 24px;
     padding-top: 50px;
     padding-left: 80px;
     padding-right: 80px;
-    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-    gap: 50px;
+    padding-bottom: 20px;
+    background: linear-gradient(180deg, #f7fbff 0%,#ffffff 100%);
+    gap: 28px;
+    row-gap: 72px;
+}
+
+.module-cards{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 22px 22px 20px 22px;
+    border-radius: 10px;
+    margin-bottom: 0;
+    border: 1px solid rgb(224, 231, 240);
+    border-left: 3px solid #2e7ed8;
+    box-shadow: 0 2px 8px rgba(26, 63, 113, 0.05);
+    height: auto;
+    min-height: 100%;
+}
+
+.module-cards:hover{
+    box-shadow: 0 8px 20px rgba(26, 63, 113, 0.1);
+    transform: translateY(-2px);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    border-left: 3px solid #1c4e82;
 }
 
 .icons{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .icon{
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
     background-color: rgb(224, 236, 253);
-    border-radius: 40%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,66 +179,70 @@ a{
 }
 
 .icon svg{
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
 }
 
 .available h1 {
     color: #3898d0;
-    font-size: 15px;
-    letter-spacing: -0.5px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
     background-color: rgb(231, 253, 255);
-    padding: 1px 7px;
+    padding: 2px 8px;
     border: 1px solid #3898d0;
-    border-radius: 30px;
+    border-radius: 4px;
 }
 
 .name{
     color: #2f6fa8;
-    font-size: 15px;
-    letter-spacing: 0px;
-    background-color: rgba(111, 196, 235, 0.16);
-    padding: 6px 10px;
-    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    background-color: rgba(111, 196, 235, 0.14);
+    padding: 3px 8px;
+    border-radius: 4px;
     display: inline-block;
-    margin-top: 12px;
-    margin-bottom: 8px;
-    border: 1px solid rgba(82, 133, 189, 0.18);
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(82, 133, 189, 0.16);
+}
+
+.module-cards h4{
+    font-size: 17px;
+    font-weight: 600;
+    color: #17263b;
+    margin: 0px;
+}
+
+.module-cards h3{
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.module-cards h5{
+    color: rgb(35, 97, 136);
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
 }
 
 .text-grids{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 24px;
-    gap: 8px 18px;
+    gap: 6px 10px;
+    margin-top: 0;
+    padding-top: 12px;
 }
 
-
-.module-cards{
-    background: linear-gradient(180deg, #ffffff 0%, #f3f7fd 100%);
-    padding: 24px 22px 26px 22px;
-    border-radius: 20px;
-    margin: 0;
-    border: 1px solid rgba(92, 128, 179, 0.16);
-    box-shadow: 0 12px 26px rgba(26, 63, 113, 0.08);
-    border-left: 4px solid  #4e9ccc;
-}
-
-.module-cards:hover{
-    box-shadow: 0 20px 38px rgba(26, 63, 113, 0.14);
-    transform: translateY(-2px);
-    transition: all 0.25s ease;
-    border-left: 4px solid #6777d1;
-}
-
-.module-cards h2{
+.text-grids h2{
+    font-size: 12.5px;
+    line-height: 1.6;
     font-weight: normal;
-    color: rgb(111, 111, 111);
-}
-
-.module-cards h5{
-    color:rgb(35, 97, 136);
-    font-weight: 500;
+    color: rgb(90, 96, 107);
+    margin: 0;
 }
 
 .bottom{
@@ -208,6 +250,7 @@ a{
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
+    margin-top: 90px;
     padding-bottom: 80px;
     background: linear-gradient(
         135deg,
@@ -232,7 +275,7 @@ a{
 }
 
 .bottom-buttons a{
-    padding:1px 30px;
+    padding:10px 20px;
     color: white;
     border-radius: 20px;
     border: none;
@@ -273,11 +316,23 @@ a{
 
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 900px) {
-    *, *::before, *::after{
-        box-sizing: border-box;
+/* Tablet: two columns instead of jumping straight to one */
+@media (max-width: 1000px) and (min-width: 641px){
+    .module-grid{
+        grid-template-columns: 1fr 1fr;
+        padding-left: 40px;
+        padding-right: 40px;
+        gap: 22px;
+        row-gap: 70px;
     }
 
+    .available h1,.name
+    {
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 900px) {
     .module-nav{
         padding: 0px 15px;
     }
@@ -291,11 +346,13 @@ a{
 
     .module-hero h1{
         font-size: 26px;
+        letter-spacing: 0px;
     }
 
     .module-hero h2{
         font-size: 14px;
     }
+
 
     .num{
         flex-direction: column;
@@ -309,19 +366,6 @@ a{
         gap: 10px;
     }
 
-    .module-grid{
-        grid-template-columns: 1fr;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .text-grids{
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-
     .bottom{
         padding-left: 20px;
         padding-right: 20px;
@@ -332,16 +376,39 @@ a{
         font-size: 24px;
     }
 
-    .bottom-buttons{
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
+
 
     .bottom-buttons a{
         width: 100%;
         text-align: center;
         padding: 16px;
+    }
+}
+
+/* Phones: single column, tighter spacing, no overflow */
+@media (max-width: 640px) {
+    .module-grid{
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+        gap: 16px;
+        row-gap: 50px;
+    }
+
+    .module-cards{
+        padding: 18px 18px 16px 18px;
+    }
+
+    .text-grids{
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 0px;
+    }
+
+    .available h1, .name{
+        font-size: 11px !important;
+    }
+
+    .bottom h1{
+        letter-spacing: 0px;
     }
 }
 
@@ -351,15 +418,14 @@ a{
     }
 
     .available h1, .name{
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .module-cards h4{
         font-size: 15px;
     }
-}
 
-.learn-more:hover{
-    cursor: pointer;
-    color: rgb(57, 149, 228);
+    .text-grids{
+        grid-template-columns: 1fr;
+    }
 }
