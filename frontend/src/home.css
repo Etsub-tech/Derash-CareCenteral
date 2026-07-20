@@ -47,7 +47,7 @@ h1{
   z-index: 1000;
   background-color: white;
   width: 100%;
-  box-shadow: 1px 1px 10px rgb(221, 219, 254);
+  box-shadow: 1px 1px 3px rgb(237, 237, 255);
 }
 
 
@@ -283,7 +283,7 @@ h1{
     padding: 34px 36px;
     box-shadow: 0 12px 30px rgba(26, 63, 113, 0.08);
     border: 1px solid rgba(94, 126, 173, 0.12);
-    min-height: 140px;
+    height: 140px;
     border-left: 3.5px solid #4e9ccc; 
 }
 .card h3{
@@ -356,11 +356,7 @@ h1{
     z-index: 1;
 }
 
-.facility-card.active,
-.facility-card:hover{
-    transform: translateY(-8px) scale(1.02);
-    z-index: 3;
-}
+
 
 .facility-visual{
     position: relative;
@@ -380,12 +376,10 @@ h1{
   filter: brightness(70%); /* lower % = darker */
 }
 
-
-
-.facility-card:hover .facility-visual img,
-.facility-card.active .facility-visual img {
-    transform: scale(1.045);
+.facility-card:hover .facility-visual img {
+    transform: scale(1.08);
 }
+
 
 .facility-visual-footer{
     position: absolute;
@@ -426,7 +420,8 @@ h1{
     color: rgb(94, 109, 133);
     font-size: 15px;
     font-weight: 500;
-    background-color: rgb(239, 245, 253);
+    border-left: 1px solid rgb(207, 227, 255);
+    border-bottom: 1px solid rgb(236, 241, 249);
     padding: 10px;
     border-radius: 12px;
     width: 250px;
@@ -498,9 +493,9 @@ h1{
     background: linear-gradient(
         135deg,
         #3997ca 0%,
-        #2e7ed8 0%,
+        #396495 0%,
         #2b7098 70%,
-        #2c1c68 100%)
+        #504193 100%)
 
 }
 
@@ -639,13 +634,19 @@ h1{
     border-radius: 20px;
     background-color:#256dbe;
     text-align: left;
-    height: 560px
+    height: 560px;
+        background: linear-gradient(
+        135deg,
+        #3997ca 0%,
+        #487ab4 0%,
+        #2276a7 70%,
+        #4e56ac 100%)
 }
 
 .price-white:hover, .price-blue:hover{
     margin-top: -10px;
     transition: all 0.5s ease;
-    box-shadow: 9px 5px 50px rgb(221, 218, 254);
+    box-shadow: 4px 4px 10px rgb(225, 223, 251);
 }
 
 .price-white h2{
