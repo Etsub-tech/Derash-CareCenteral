@@ -354,7 +354,7 @@ function Home(){
 
             <div className = "gray" id="about">
                 <hr/>
-                <h3 style={{color: "#3898d0",fontWeight: "bold"}}>Why CareCentral</h3>
+                <h3 style={{color: "rgb(29, 86, 126);"}}>Why CareCentral</h3>
                 <div className="title"><h1>Built for Modern<span style={{color: "#3898d0"}}> Healthcare</span></h1></div>
                 <h3>A platform designed from the ground up for clinics, hospitals, and multi-branch <br/> healthcare networks in Ethiopia.</h3>
 
@@ -410,7 +410,7 @@ function Home(){
 
             <div className='fourth'>
                 <hr/>
-                <h3 style = {{color: "#3898d0",fontWeight: "bold"}}>Core Modules</h3>
+                <h3 style = {{color: "rgb(29, 86, 126);"}}>Core Modules</h3>
                 <div className='title'><h1 >Everything Your <span style={{color: "#3898d0"}}>Facility Needs</span></h1></div>
                 <h3 style = {{color: "gray"}}>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
 
@@ -727,7 +727,7 @@ function Home(){
             </div>
             </div>
                 </div>
-                
+
                 <div id="pricing">
                     <Price />
                 </div>
