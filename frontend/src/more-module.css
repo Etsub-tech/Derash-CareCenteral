@@ -332,9 +332,19 @@
 }
 
 @media (max-width: 900px) {
+
+    .hero{
+        padding-top: 130px;
+    }
     .more-modules-page .module-nav{
         padding: 0px 15px;
     }
+
+    .buttons{
+        display: flex !important;
+        
+    }
+
 
     .more-modules-page .module-hero{
         padding-top: 110px;
@@ -386,6 +396,8 @@
 
 /* Phones: single column, tighter spacing, no overflow */
 @media (max-width: 640px) {
+
+
     .more-modules-page .module-grid{
         grid-template-columns: 1fr;
         padding: 20px 16px;
@@ -412,6 +424,17 @@
 }
 
 @media (max-width: 480px) {
+    .stat-card h1 {
+        font-size: 23px !important;
+    }
+        .stat-card h4 {
+        font-size: 9px !important;
+    }
+
+    .filter-btn{
+        font-size: 12px !important;
+        padding: 5px !important;
+    }
     .more-modules-page .module-hero h1{
         font-size: 22px;
     }
