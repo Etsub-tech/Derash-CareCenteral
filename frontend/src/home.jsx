@@ -671,12 +671,8 @@ function Home(){
                 </div>
             </div>
                 </div>
-                <div id="pricing">
-                    <Price />
-                </div>
-            
 
-                <div className='advantages'>
+                                <div className='advantages'>
                 <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Why Choose Us</h3>
                 <div className='title'><h1>The CareCentral<span style={{color: "#3898d0"}}> Advantage</span></h1></div>
@@ -731,6 +727,13 @@ function Home(){
             </div>
             </div>
                 </div>
+                
+                <div id="pricing">
+                    <Price />
+                </div>
+            
+
+
 
                 <div id= "questions"><Question/></div>
                 <div id= "demos"><Demo /></div>
