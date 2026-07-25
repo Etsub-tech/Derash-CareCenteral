@@ -546,7 +546,7 @@ function MoreModules() {
     filter === "all" ? modules : modules.filter((m) => m.category === filter);
 
   return (
-    <>
+    <div className="more-modules-page">
       <div className="module-nav">
         <HashLink to="/" className="back-home">
           ← Back to Home
@@ -660,7 +660,7 @@ function MoreModules() {
       <div className="bottom-nav">
         <span>© 2024 Beltech Solutions · CareCentral Healthcare ERP</span>
       </div>
-    </>
+    </div>
   );
 }
 

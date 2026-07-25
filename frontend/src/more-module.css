@@ -1,9 +1,8 @@
-
-a{
+.more-modules-page a{
     text-decoration: none;
     font-size: 14px;
 }
-.module-nav{
+.more-modules-page .module-nav{
   display: flex; 
   justify-content: space-between;
   align-items: center;
@@ -16,19 +15,19 @@ a{
   padding: 0px 20px;
 }
 
-.back-home{
+.more-modules-page .back-home{
     color: #2e7ed8;
     cursor: pointer;
     transition: color 0.2s, opacity 0.2s;
     padding-right: 50px;
 }
 
-.back-home:hover{
+.more-modules-page .back-home:hover{
     color: #1c4e82;
     opacity: 0.8;
 }
 
-.module-hero{
+.more-modules-page .module-hero{
     padding-top: 140px;
     text-align: center;
     padding-left: 40px;
@@ -43,19 +42,19 @@ a{
         #2c1c68 100%)
 }
 
-.module-hero h1{
+.more-modules-page .module-hero h1{
     color: rgb(228, 228, 228);
     font-size: 40px;
     font-weight: bold;
 }
 
-.module-hero h2 .module-hero h3{
+.more-modules-page .module-hero h2 .module-hero h3{
     font-size: 16px;
     color: white;
     font-weight: normal;
 }
 
-.module-hero hr{
+.more-modules-page .module-hero hr{
     width: 25px;
     color: rgb(48, 105, 171);
     border: 2px solid rgb(109, 166, 246);
@@ -63,18 +62,18 @@ a{
     margin-bottom: -10px;
 }
 
-.num{
+.more-modules-page .num{
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.num h3{
+.more-modules-page .num h3{
     margin-top:-15px;
     color: white;
 }
 
-.buttons{
+.more-modules-page .buttons{
     display: flex;
     align-items: center;
     padding-left: 40px;
@@ -85,7 +84,7 @@ a{
     background-color: #f7fbff;
 }
 
-.filter-btn{
+.more-modules-page .filter-btn{
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 6px;
@@ -98,33 +97,33 @@ a{
     transition: background-color 0.2s, color 0.2s;
 }
 
-.filter-btn:hover{
+.more-modules-page .filter-btn:hover{
     background-color: rgb(224, 236, 253);
 }
 
-.filter-btn.active{
+.more-modules-page .filter-btn.active{
     background-color: #2e7ed8;
     color: white;
 }
 
-.filter-btn.active:hover{
+.more-modules-page .filter-btn.active:hover{
     background-color: #2670bd;
 }
 
 /* ---------------- MODULE CARDS ---------------- */
-.icon-title {
+.more-modules-page .icon-title {
   display: flex;
   align-items: center; 
   gap: 8px;         
   margin-top: 10px;  
 }
 
-.module-title {
+.more-modules-page .module-title {
   margin: 0;
 }
 
 
-.module-grid{
+.more-modules-page .module-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
@@ -138,7 +137,7 @@ a{
     row-gap: 72px;
 }
 
-.module-cards{
+.more-modules-page .module-cards{
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -152,21 +151,21 @@ a{
     min-height: 100%;
 }
 
-.module-cards:hover{
+.more-modules-page .module-cards:hover{
     box-shadow: 0 8px 20px rgba(26, 63, 113, 0.1);
     transform: translateY(-2px);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     border-left: 3px solid #1c4e82;
 }
 
-.icons{
+.more-modules-page .icons{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.icon{
+.more-modules-page .icon{
     width: 38px;
     height: 38px;
     flex-shrink: 0;
@@ -178,12 +177,12 @@ a{
     color: rgb(45, 107, 177);
 }
 
-.icon svg{
+.more-modules-page .icon svg{
     width: 18px;
     height: 18px;
 }
 
-.available h1 {
+.more-modules-page .available h1 {
     color: #3898d0;
     font-size: 11px;
     font-weight: 500;
@@ -194,7 +193,7 @@ a{
     border-radius: 4px;
 }
 
-.name{
+.more-modules-page .name{
     color: #2f6fa8;
     font-size: 11px;
     font-weight: 500;
@@ -209,27 +208,27 @@ a{
     border: 1px solid rgba(82, 133, 189, 0.16);
 }
 
-.module-cards h4{
+.more-modules-page .module-cards h4{
     font-size: 17px;
     font-weight: 600;
     color: #17263b;
     margin: 0px;
 }
 
-.module-cards h3{
+.more-modules-page .module-cards h3{
     font-size: 13.5px;
     line-height: 1.5;
     margin: 0;
 }
 
-.module-cards h5{
+.more-modules-page .module-cards h5{
     color: rgb(35, 97, 136);
     font-size: 11px;
     letter-spacing: 0.4px;
     font-weight: 600;
 }
 
-.text-grids{
+.more-modules-page .text-grids{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px 10px;
@@ -237,7 +236,7 @@ a{
     padding-top: 12px;
 }
 
-.text-grids h2{
+.more-modules-page .text-grids h2{
     font-size: 12.5px;
     line-height: 1.6;
     font-weight: normal;
@@ -245,7 +244,7 @@ a{
     margin: 0;
 }
 
-.bottom{
+.more-modules-page .bottom{
     padding-top: 30px;
     text-align: center;
     padding-left: 40px;
@@ -260,12 +259,12 @@ a{
         #2c1c68 100%)
 }
 
-.buttom h1, h2{
+.more-modules-page .buttom h1, .more-modules-page h2{
     color: white;
     font-weight: normal;
 }
 
-.bottom-buttons{
+.more-modules-page .bottom-buttons{
     display: flex;
     justify-content: center;
     gap: 30px;  
@@ -274,7 +273,7 @@ a{
     flex-wrap: wrap;
 }
 
-.bottom-buttons a{
+.more-modules-page .bottom-buttons a{
     padding:10px 20px;
     color: white;
     border-radius: 20px;
@@ -284,22 +283,22 @@ a{
     transition: opacity 0.2s, transform 0.15s;
 }
 
-.bottom-buttons a:hover{
+.more-modules-page .bottom-buttons a:hover{
     opacity: 0.85;
     transform: translateY(-2px);
 }
 
-.button1{
+.more-modules-page .button1{
     background-color:rgba(255, 255, 255, 0.2) ;
     color: white;
 }
 
-.button2{
+.more-modules-page .button2{
     background-color: white;
     color: #2e7ed8;
 }
 
-.bottom-nav{
+.more-modules-page .bottom-nav{
     background-color: #0a1533;
     color: rgb(59, 59, 59);
     font-weight: normal;
@@ -308,7 +307,7 @@ a{
     text-align: center;
 }
 
-.bottom-nav span{
+.more-modules-page .bottom-nav span{
     color: gray;
     font-size: 13px;
 }
@@ -318,7 +317,7 @@ a{
 
 /* Tablet: two columns instead of jumping straight to one */
 @media (max-width: 1000px) and (min-width: 641px){
-    .module-grid{
+    .more-modules-page .module-grid{
         grid-template-columns: 1fr 1fr;
         padding-left: 40px;
         padding-right: 40px;
@@ -326,59 +325,59 @@ a{
         row-gap: 70px;
     }
 
-    .available h1,.name
+    .more-modules-page .available h1,.more-modules-page .name
     {
         font-size: 11px !important;
     }
 }
 
 @media (max-width: 900px) {
-    .module-nav{
+    .more-modules-page .module-nav{
         padding: 0px 15px;
     }
 
-    .module-hero{
+    .more-modules-page .module-hero{
         padding-top: 110px;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 50px;
     }
 
-    .module-hero h1{
+    .more-modules-page .module-hero h1{
         font-size: 26px;
         letter-spacing: 0px;
     }
 
-    .module-hero h2{
+    .more-modules-page .module-hero h2{
         font-size: 14px;
     }
 
 
-    .num{
+    .more-modules-page .num{
         flex-direction: column;
         gap: 10px;
     }
 
-    .buttons{
+    .more-modules-page .buttons{
         flex-wrap: wrap;
         height: auto;
         padding: 15px 20px;
         gap: 10px;
     }
 
-    .bottom{
+    .more-modules-page .bottom{
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 50px;
     }
 
-    .bottom h1{
+    .more-modules-page .bottom h1{
         font-size: 24px;
     }
 
 
 
-    .bottom-buttons a{
+    .more-modules-page .bottom-buttons a{
         width: 100%;
         text-align: center;
         padding: 16px;
@@ -387,45 +386,45 @@ a{
 
 /* Phones: single column, tighter spacing, no overflow */
 @media (max-width: 640px) {
-    .module-grid{
+    .more-modules-page .module-grid{
         grid-template-columns: 1fr;
         padding: 20px 16px;
         gap: 16px;
         row-gap: 50px;
     }
 
-    .module-cards{
+    .more-modules-page .module-cards{
         padding: 18px 18px 16px 18px;
     }
 
-    .text-grids{
+    .more-modules-page .text-grids{
         grid-template-columns: 1fr 1fr;
         gap: 4px 0px;
     }
 
-    .available h1, .name{
+    .more-modules-page .available h1, .more-modules-page .name{
         font-size: 11px !important;
     }
 
-    .bottom h1{
+    .more-modules-page .bottom h1{
         letter-spacing: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    .module-hero h1{
+    .more-modules-page .module-hero h1{
         font-size: 22px;
     }
 
-    .available h1, .name{
+    .more-modules-page .available h1, .more-modules-page .name{
         font-size: 11px;
     }
 
-    .module-cards h4{
+    .more-modules-page .module-cards h4{
         font-size: 15px;
     }
 
-    .text-grids{
+    .more-modules-page .text-grids{
         grid-template-columns: 1fr;
     }
 }
