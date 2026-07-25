@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Price from "./price.jsx";
 import Question from "./question.jsx";
 import Contact from "./contact.jsx";
@@ -69,15 +69,47 @@ function Home(){
         ];
         const [activeFacility, setActiveFacility] = useState(0);
         const facilityCardRefs = useRef([]);
+        const facilityTrackRef = useRef(null);
 
         const scrollToFacilityCard = (index) => {
             setActiveFacility(index);
-            facilityCardRefs.current[index]?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'start',
-            });
+            if (window.innerWidth <= 900) {
+                facilityCardRefs.current[index]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center',
+                });
+            }
         };
+
+        useEffect(() => {
+            const track = facilityTrackRef.current;
+            if (!track) return;
+
+            const handleScroll = () => {
+                if (window.innerWidth > 900) return;
+
+                const slides = facilityCardRefs.current.filter(Boolean);
+                const trackRect = track.getBoundingClientRect();
+                const center = trackRect.left + trackRect.width / 2;
+
+                let closest = 0;
+                let minDist = Infinity;
+                slides.forEach((slide, i) => {
+                    const rect = slide.getBoundingClientRect();
+                    const slideCenter = rect.left + rect.width / 2;
+                    const dist = Math.abs(center - slideCenter);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        closest = i;
+                    }
+                });
+                setActiveFacility(closest);
+            };
+
+            track.addEventListener('scroll', handleScroll, { passive: true });
+            return () => track.removeEventListener('scroll', handleScroll);
+        }, []);
         const scrollToFeatures = () => {
         const section = document.getElementById("features");
         section.scrollIntoView({ behavior: "smooth" });
@@ -141,8 +173,8 @@ function Home(){
             </div>
 
             <div className = "hero">
-                <div className = "made-for-eth"><span>Enterprise EMR+ ERP· Made for Ethiopia</span></div>
-                <a style={{fontSize: "60px", fontWeight: "bold"}}>Healthcare </a> <a style={{fontSize: "60px", fontWeight: "bold", color: "#acd1f7"}}>Management Made</a><h1 style={{fontSize: "60px", fontWeight: "bold", color: "white", marginBottom: "60px"}}>Simple.</h1>
+                <div className = "made-for-eth"><span>Enterprise EMR + ERP. Made for Ethiopia</span></div>
+                <a style={{fontSize: "60px", fontWeight: "bold"}}>Healthcare </a> <a style={{fontSize: "60px", fontWeight: "bold", color: "#ffffff"}}>Management Made</a><h1 style={{fontSize: "60px", fontWeight: "bold", color: "white", marginBottom: "60px"}}>Simple.</h1>
                 <h3>CareCentral is a modern Healthcare ERP built on Odoo that
                     <br/>helps clinics and hospitals streamline patient care,
                     <br/>operations, finance, and administration from one centralized 
@@ -322,8 +354,8 @@ function Home(){
 
             <div className = "gray" id="about">
                 <hr/>
-                <h3 style={{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Why CareCentral</h3>
-                <div className="title"><h1>Built for Modern Healthcare</h1></div>
+                <h3 style={{color: "#3898d0",fontWeight: "bold"}}>Why CareCentral</h3>
+                <div className="title"><h1>Built for Modern<span style={{color: "#3898d0"}}> Healthcare</span></h1></div>
                 <h3>A platform designed from the ground up for clinics, hospitals, and multi-branch <br/> healthcare networks in Ethiopia.</h3>
 
                 <div className='cards-column'>
@@ -378,33 +410,57 @@ function Home(){
 
             <div className='fourth'>
                 <hr/>
-                <h3 style = {{color: "rgb(48, 105, 171)",fontWeight: "bold"}}>Core Modules</h3>
-                <div className='title'><h1 >Everything Your Facility Needs</h1></div>
+                <h3 style = {{color: "#3898d0",fontWeight: "bold"}}>Core Modules</h3>
+                <div className='title'><h1 >Everything Your <span style={{color: "#3898d0"}}>Facility Needs</span></h1></div>
                 <h3 style = {{color: "gray"}}>Integrated clinical workflows that cover every touchpoint — from the front desk to the <br/>ICU.</h3>
 
                 <div className="facility-carousel" role="region" aria-label="Everything your facility needs modules">
-                    {facilityCards.map((facility, index) => (
-                        <div
-                            key={facility.title}
-                            className={`facility-card ${activeFacility === index ? 'active' : ''}`}
-                            ref={(element) => (facilityCardRefs.current[index] = element)}
-                            onMouseEnter={() => setActiveFacility(index)}
-                        >
-                            <div className="facility-visual">
-                                <img src={facility.image} alt={facility.title} />
-                                <div className="facility-visual-footer">
-                                    <div className="icon-circle">{facility.icon}</div>
-                                    <h2>{facility.title}</h2>
+                    <div className="facility-carousel-track" ref={facilityTrackRef}>
+                        {facilityCards.map((facility, index) => (
+                            <div
+                                key={facility.title}
+                                className={`facility-slide ${activeFacility === index ? 'active' : ''}`}
+                                ref={(element) => (facilityCardRefs.current[index] = element)}
+                            >
+                                <div className="facility-visual">
+                                    <img src={facility.image} alt={facility.title} />
+                                    <div className="facility-visual-overlay">
+                                        <div className="facility-visual-header">
+                                            <div className="facility-icon-box">{facility.icon}</div>
+                                            <h2>{facility.title}</h2>
+                                        </div>
+                                        <div className="facility-list">
+                                            {facility.list.map((item) => (
+                                                <h3 key={item}><span className="facility-check">✓</span> {item}</h3>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="facility-list">
-                                {facility.list.map((item) => (
-                                    <h3 key={item}>✓ {item}</h3>
-                                ))}
-                                <Link className="learn-more-link" to="/more-modules">Learn More →</Link>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+
+                    <div className="facility-carousel-sidebar" aria-label="Module navigation">
+                        {facilityCards.map((facility, index) => (
+                            index !== activeFacility ? (
+                                <button
+                                    key={facility.title}
+                                    type="button"
+                                    className="facility-thumbnail"
+                                    onClick={() => scrollToFacilityCard(index)}
+                                    aria-label={`Go to ${facility.title}`}
+                                >
+                                    <div className="facility-thumbnail-image-container">
+                                        <img src={facility.image} alt="" />
+                                        <div className="facility-thumbnail-icon">{facility.icon}</div>
+                                    </div>
+                                    <div className="facility-thumbnail-info">
+                                        <span className="facility-thumbnail-title">{facility.title}</span>
+                                    </div>
+                                </button>
+                            ) : null
+                        ))}
+                    </div>
                 </div>
 
                 <div className="facility-progress-dots" aria-label="Carousel navigation dots">
@@ -425,7 +481,7 @@ function Home(){
             <div className = "second-blue">
                 <hr />
                 <h3 style={{color: "rgb(117, 223, 250)"}}>SPECIALITY MODULES</h3>
-                <div className='title'><h1>Expand to Any Specialty</h1></div>
+                <div className='title'><h1>Expand to Any <span style={{color: "#3898d0"}}></span>Specialty</h1></div>
                 <h3>Add specialty modules as your facility's clinical scope grows.</h3>
 
                 <div className="glass-cards">
@@ -456,7 +512,7 @@ function Home(){
             <div className="third-white" id="features">
                  <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Platform Features</h3>
-                <div className='title' ><h1>Engineered for Healthcare Excellence</h1></div>
+                <div className='title' ><h1>Engineered for Healthcare <span style={{color: "#3898d0"}}>Excellence</span></h1></div>
                 <h3>Every feature built with clinical workflow, compliance, and usability in mind.</h3>
                 
                 <div className = "third-grids">
@@ -555,7 +611,7 @@ function Home(){
             <div className="second-gray">
                  <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Integrations</h3>
-                <div className='title'><h1>Connected to Everything You Need</h1></div>
+                <div className='title'><h1>Connected to Everything<span style={{color: "#3898d0"}}> You Need</span> </h1></div>
                 <h3>Seamlessly integrated with business operations, medical devices, and future health standards.</h3>
 
             <div className='second-gray-grid'>
@@ -623,7 +679,7 @@ function Home(){
                 <div className='advantages'>
                 <hr />
                 <h3 style={{color: "rgb(29, 86, 126)"}}>Why Choose Us</h3>
-                <div className='title'><h1>The CareCentral Advantage</h1></div>
+                <div className='title'><h1>The CareCentral<span style={{color: "#3898d0"}}> Advantage</span></h1></div>
                 <h3 style={{color: "gray"}}>We are not just software — we are your long-term healthcare technology partner.</h3>
 
 
@@ -686,7 +742,7 @@ function Home(){
     <div className="footer-grid">
         <div className="footer-brand">
             <div className="footer-logo"><img src={logo} alt="Logo" /></div>
-            <h3>A modern Healthcare EMR+ ERP by Beltech Solutions — empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
+            <h3>A modern Healthcare EMR+ ERP by Beltech Solutions empowering Ethiopia's clinics and hospitals with enterprise-grade technology.</h3>
             <div className="footer-socials">
                 <a
                     href="https://www.linkedin.com/company/carecentral"
